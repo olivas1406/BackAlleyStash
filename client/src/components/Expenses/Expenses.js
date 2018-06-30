@@ -6,6 +6,7 @@ const Expenses = props => (
         <div className="ExpenseText">Current Budget</div>
         <hr></hr><br></br>
         <table className="Transactions">
+            <tbody>
             <tr>
                 <th>Description</th>
                 <th>Category</th>
@@ -66,6 +67,7 @@ const Expenses = props => (
                 <td></td>
                 <td></td>
             </tr> */}
+            </tbody>
         </table>
 
 

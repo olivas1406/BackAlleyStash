@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';                      // Change this - DLO
 import './App.css';
-import Container from "./components/Container";
+// import Container from "./components/Container";  // REMOVE ME - DLO
 import Header from "./components/Header";
 import Expenses from "./components/Expenses";
+import Chart from "./components/Chart";
+
 
 class App extends Component {
   render() {
     return (
-    <Container> 
+   <div>
       <Header />
       <Expenses />
-      </Container>
+      <Chart />
+    </div>
     );
   }
 }
