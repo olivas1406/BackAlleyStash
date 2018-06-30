@@ -62,18 +62,9 @@ const Expenses = props => (
                 <td></td>
                 <td>$2473.50</td></strong>
             </tr>
-            {/* <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr> */}
             </tbody>
         </table>
-
-
         <br></br>
-
-
     </div>    
 );
 
