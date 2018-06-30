@@ -4,6 +4,7 @@ import './App.css';
 import Header from "./components/Header";
 import Expenses from "./components/Expenses";
 import Chart from "./components/Chart";
+import Stash from "./components/Stash";
 
 
 class App extends Component {
@@ -12,7 +13,8 @@ class App extends Component {
    <div>
       <Header />
       <Expenses />
-      <Chart />
+      <Chart /><br></br>
+      <Stash />
     </div>
     );
   }

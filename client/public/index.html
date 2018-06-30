@@ -21,10 +21,9 @@
   <script>
   var ctx = document.getElementById('CategoryChart').getContext('2d');
 var chart = new Chart(ctx, {
-    // The type of chart we want to create
+  
     type: 'doughnut',
 
-    // The data for our dataset
     data: {
         labels: ["Recurring", "One Time Expense", "Emergency"],
         datasets: [{
@@ -35,7 +34,26 @@ var chart = new Chart(ctx, {
         }]
     },
 
-    // Configuration options go here
+    options: {}
+});
+</script>
+
+<script>
+  var ctx = document.getElementById('Stash').getContext('2d');
+var chart = new Chart(ctx, {
+
+    type: 'line',
+
+    data: {
+        labels: ["Your Stash"],
+        datasets: [{
+            label: "Your Back Alley Stash",
+            backgroundColor: 'rgb(128,0,0)',
+            borderColor: 'rgb(255,255,224)',
+            data: [10, 12, 15],
+        }]
+    },
+
     options: {}
 });
 </script>
