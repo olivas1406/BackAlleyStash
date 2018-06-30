@@ -3,6 +3,7 @@
     max-width: 20%;
     height: 20%;
     float: left;
-    margin: 2% 0 5% 3%;
+    margin: 2% 0 5% 3%; 
+    border: solid 1px #1485CC;
   
 }
