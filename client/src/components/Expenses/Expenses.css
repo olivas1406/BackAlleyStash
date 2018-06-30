@@ -12,6 +12,7 @@
     text-align: center;
     font-size: 30px;
     font-family: 'Encode Sans Condensed', sans-serif;
+    
 
 }
 
@@ -20,6 +21,10 @@
     color: #0971B2;
     font-family: 'Encode Sans Condensed', sans-serif;
 
+}
+
+.Transactions {
+    font-family: 'Quicksand', sans-serif;
 }
 
 table {
