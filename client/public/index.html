@@ -17,46 +17,36 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
-
   </body>
   <script>
-  var ctx = document.getElementById('CategoryChart').getContext('2d');
-var chart = new Chart(ctx, {
-  
-    type: 'doughnut',
-
-    data: {
+    var ctx = document.getElementById('CategoryChart').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'doughnut',
+      data: {
         labels: ["Recurring", "One Time Expense", "Emergency"],
         datasets: [{
-            label: "Expenses by Category",
-            backgroundColor: 'rgb(29, 30, 119)',
-            borderColor: 'rgb(87, 30, 52)',
-            data: [6, 5, 1],
+          label: "Expenses by Category",
+          backgroundColor: 'rgb(29, 30, 119)',
+          borderColor: 'rgb(87, 30, 52)',
+          data: [6, 5, 1],
         }]
-    },
+      },
+      options: {}
+    });
 
-    options: {}
-});
-</script>
-
-<script>
-  var ctx = document.getElementById('Stash').getContext('2d');
-var chart = new Chart(ctx, {
-
-    type: 'line',
-
-    data: {
+    var ctx = document.getElementById('Stash').getContext('2d');
+    var chart = new Chart(ctx, {
+      type: 'line',
+      data: {
         labels: ["Your Stash"],
         datasets: [{
-            label: "Your Back Alley Stash",
-            backgroundColor: 'rgb(128,0,0)',
-            borderColor: 'rgb(255,255,224)',
-            data: [10, 12, 15],
+          label: "Your Back Alley Stash",
+          backgroundColor: 'rgb(128,0,0)',
+          borderColor: 'rgb(255,255,224)',
+          data: [10, 12, 15],
         }]
-    },
-
-    options: {}
-});
+      },
+      options: {}
+    });
 </script>
-
 </html>
