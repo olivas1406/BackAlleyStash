@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">                   <!--       Change This - DLO -->
     <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Playfair+Display" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <title>Back Alley Stash</title>
   </head>
   <body>
@@ -17,4 +18,26 @@
     <div id="root"></div>
 
   </body>
+  <script>
+  var ctx = document.getElementById('CategoryChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'doughnut',
+
+    // The data for our dataset
+    data: {
+        labels: ["Recurring", "One Time Expense", "Emergency"],
+        datasets: [{
+            label: "Expenses by Category",
+            backgroundColor: 'rgb(29, 30, 119)',
+            borderColor: 'rgb(87, 30, 52)',
+            data: [6, 5, 1],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+
 </html>
