@@ -1,6 +1,7 @@
 .Expenses {
     width: 50%;
     border: solid 1px #1485CC;
+    border-radius: 14px;
     float: left;
     margin: 2% 0 0 3%;
 }
