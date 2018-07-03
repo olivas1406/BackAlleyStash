@@ -1,9 +1,9 @@
 .Expenses {
     width: 50%;
     border: solid 1px #1485CC;
+    border-radius: 14px;
     float: left;
     margin: 2% 0 0 3%;
-
 }
 
 .ExpenseText {
@@ -12,14 +12,16 @@
     text-align: center;
     font-size: 30px;
     font-family: 'Encode Sans Condensed', sans-serif;
-
 }
 
 .TransactionsTitle {
     margin: -3% 0 0 2%;
     color: #0971B2;
     font-family: 'Encode Sans Condensed', sans-serif;
+}
 
+.Transactions {
+    font-family: 'Quicksand', sans-serif;
 }
 
 table {
@@ -37,8 +39,4 @@ td, th {
 tr:nth-child(even) {
     background-color: #dddddd;
 }
-
-
-
-
 

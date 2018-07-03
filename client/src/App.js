@@ -1,25 +1,25 @@
-import React, { Component } from 'react';
-import './App.css';
-// import Container from "./components/Container";  // REMOVE ME - DLO
-import Header from "./components/Header";
-import Expenses from "./components/Expenses";
-import Chart from "./components/Chart";
-import Stash from "./components/Stash";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import AssetTracker from "./pages/AssetTracker";
+import Home from "./pages/Home";
+import Logout from "./pages/Logout";
+import Stash from "./pages/Stash";
 import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 
-
-class App extends Component {
-  render() {
-    return (
-   <div>
+const App = () => (
+  <Router>
+    <div>
       <Navbar />
       <Header />
-      <Expenses />
-      <Chart /><br></br>
-      <Stash />
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/AssetTracker" component={AssetTracker} />
+        <Route exact path="/Stash" component={Stash} />
+        <Route exact path="/Logout" component={Logout} />
+      </Switch>
     </div>
-    );
-  }
-}
+  </Router>
+);
 
 export default App;
