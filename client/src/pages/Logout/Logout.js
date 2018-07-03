@@ -1,11 +1,13 @@
 import React from "react";
+import "./Logout.css";
 
 const Logout = () => (
   <div>
-    <h1>Logout Page</h1>
-    <p>
-      
-    </p>
+    <div className="AtTitle">Logout Page
+      </div><br />
+        <p className="LogoutText">
+          You have successfully logged out!
+        </p>
   </div>
 );
 
