@@ -8,11 +8,10 @@ var self = module.exports = {
 
   User: db.define('users',
     {
-      id: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
+      userId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
       firstname: {type: Sequelize.STRING, allowNull: false}
       lastname: {type: Sequelize.STRING, allowNull: fale}
       email: {type: Sequelize.STRING, len: 255, allowNull: false},
-      api_key: {type: Sequelize.STRING, len: 255}
     },
     {
       charset: 'utf8',
@@ -27,7 +26,7 @@ var self = module.exports = {
 
     authentication: db.define('authentication'),
     {
-      id: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
+      authenticationId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
       login: {type: Sequelize.STRING, len: 255, allowNull: false}
       password: {type: Sequelize.STRING, len: 10, allowNull: false}
     },
@@ -62,8 +61,8 @@ var self = module.exports = {
 
   AccountType: db.define('accounttype',
     {
-      id: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
-      AccountTypeDesc: {type: Sequelize.STRING, len: 255, allowNull: false}
+      accountTypeId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
+      accountTypeDesc: {type: Sequelize.STRING, len: 255, allowNull: false}
     },
     {
       charset: 'utf8',
@@ -78,7 +77,7 @@ var self = module.exports = {
 
     categories: db.define('categories',
     {
-      id: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
+      categoriesId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
       CategoryDesc: {type: Sequelize.STRING, len: 255, allowNull: false}
     },
     {
@@ -94,11 +93,10 @@ var self = module.exports = {
 
   Account: db.define('accounts',
     {
-      id: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
-      user_id: {type: Sequelize.INTEGER, allowNull: false},
-      account_type_id: {type: Sequelize.INTEGER, allowNull: false},
-      transactions_id: {type: Sequelize.INTEGER, allowNull: false},
-      category_id: {type: Sequelize.INTEGER, allowNull: false},
+      accountId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
+      userId: {type: Sequelize.INTEGER, allowNull: false},
+      accountTypeDesc: {type: Sequelize.STRING, allowNull: false},
+      transactionId: {type: Sequelize.INTEGER, allowNull: false},
       amount: {type: Sequelize.FLOAT, allowNull: false},
       balance: {type: Sequelize.FLOAT, allowNull: false}
     },
@@ -113,13 +111,21 @@ var self = module.exports = {
     }
   )
 };
+//sets many to many relationship between these two tables
+self.User.belongsToMany(Account, {through: 'userIdaccountId'})
+self.Account.belongsToMany(User, {through: 'userIdaccountId'})
 
-self.User.hasMany(self.Account, {as: 'accounts', foreignKey: 'user_id'});
-self.Office.hasMany(self.Account, {as: 'accounts', foreignKey: 'office_id'});
-self.AccountType.hasMany(self.Account, {as: 'accounts', foreignKey: 'account_type_id'});
-self.Account.belongsTo(self.User, {as: 'user', foreignKey: 'user_id'});
-self.Account.belongsTo(self.Office, {as: 'office', foreignKey: 'office_id'});
-self.Account.belongsTo(self.AccountType, {as: 'accounttype', foreignKey: 'account_type_id'});
-self.Transaction.belongsTo(self.Categories, {as: 'categories', foreignKey: 'account_id'});
+//relationship between account type and accounts, each account belongs to one type, each type has many accounts.
+self.AccountType.hasMany(self.Account, {foreignKey: 'accounttypeId' source: 'accountTypeDesc'});
+self.Account.belongsTo(self.AccountType, {foreignKey: 'accounttypeId' target: 'accountTypeDesc'});
+//relationship between caterogires type and tranactions, each transaction belongs to one category, 
+//each category has many transactions.
 
-self.User.hasOne(authentication);
+self.Categories.hasMany(self.Transactions, {foreignKey: 'categoryId' source: 'categoryDesc'});
+self.Transaction.belongsTo(self.Categories, {foreignKey: 'categoryId' target: 'categoryDesc'});
+
+
+
+//One to one relationship between authenticaion and user
+self.User.hasOne(authentication, {foreignKey: 'userID'}); 
+self.Authentication.belongsTo(user);
