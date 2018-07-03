@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import AssetTracker from "./pages/AssetTracker";
 import Home from "./pages/Home";
 import Logout from "./pages/Logout";
-// import Stash from "./pages/Stash";
+import Stash from "./pages/Stash";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 
