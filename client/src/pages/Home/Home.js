@@ -6,6 +6,8 @@ class Home extends Component {
   render() {
     return (
    <div>
+     <div className="AtTitle">Budget
+      </div><br />
       <Expenses />
       <Chart /><br></br>
     </div>
