@@ -1,9 +1,8 @@
 #Stash {
-    clear: both;
-    max-width: 60%;
-    height: 60%;
-    float: left;
-    margin: 2% 0 5% 3%; 
     border: solid 1px #1485CC;
     border-radius: 14px;
+    width: 80%;
+    height: 60%;
+    display: block;
+    margin: 1% auto 1% auto;
 }

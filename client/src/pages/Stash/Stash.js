@@ -8,7 +8,7 @@ class YourStash extends Component {
       <div>
         <div className="StashTitle">Your Stash
         </div>
-        <Stash /> 
+        <Stash />
       </div>
     );
   }
