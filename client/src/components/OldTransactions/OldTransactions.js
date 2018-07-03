@@ -4,11 +4,9 @@ import "./OldTransactions.css";
 const OldTransactions = props => (
     <div className="OldTransactions">{props.children}
         <div className="OldTransTitle">
-        All Old Transactions
+            All Old Transactions
         </div>   
-
-    </div>
-         
+    </div>        
 );
 
 export default OldTransactions;

@@ -4,10 +4,11 @@ import "./Logout.css";
 const Logout = () => (
   <div>
     <div className="AtTitle">Logout Page
-      </div><br />
-        <p className="LogoutText">
-          You have successfully logged out!
-        </p>
+    </div>
+    <br />
+    <p className="LogoutText">
+      You have successfully logged out!
+    </p>
   </div>
 );
 
