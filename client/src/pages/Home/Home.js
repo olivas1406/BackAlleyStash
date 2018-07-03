@@ -5,12 +5,14 @@ import Chart from "../../components/Chart";
 class Home extends Component {
   render() {
     return (
-   <div>
-     <div className="AtTitle">Budget
-      </div><br />
-      <Expenses />
-      <Chart /><br></br>
-    </div>
+      <div>
+        <div className="AtTitle">Budget
+        </div>
+        <br />
+        <Expenses />
+        <Chart />
+        <br />
+      </div>
     );
   }
 }

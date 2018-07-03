@@ -7,7 +7,7 @@ const Navbar = () => (
     <a className="Links" href="/AssetTracker"> Asset Tracker |</a>
     <a className="Links" href="/Stash"> Your Stash |</a>
     <a className="Links" href="/Logout"> Logout</a>
-    </div>
+  </div>
 );
 
 export default Navbar;
