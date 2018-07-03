@@ -1,15 +1,13 @@
-
 .jumbotron {
     text-align: center;
     background-color: rgb(71, 1, 1);
     padding-bottom: 1%;
-
 }
 
 .jumboText {
     padding: 3%;
     color: white;
-    font-size: 40px;
+    font-size: 50px;
     font-family: 'IM Fell English SC', serif;
     font-weight: bold;
     margin-bottom: -4%;

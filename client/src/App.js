@@ -7,7 +7,6 @@ import Chart from "./components/Chart";
 import Stash from "./components/Stash";
 import Navbar from "./components/Navbar";
 
-
 class App extends Component {
   render() {
     return (
@@ -16,7 +15,7 @@ class App extends Component {
       <Header />
       <Expenses />
       <Chart /><br></br>
-      <Stash />
+      <Stash /> 
     </div>
     );
   }

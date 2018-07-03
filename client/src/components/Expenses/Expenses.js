@@ -57,23 +57,14 @@ const Expenses = props => (
                 <td>Emergency</td>
                 <td>$400</td>
             </tr>
-            {/* <tr>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
             <tr>
+                <strong><td>Total</td>
                 <td></td>
-                <td></td>
-                <td></td>
-            </tr> */}
+                <td>$2473.50</td></strong>
+            </tr>
             </tbody>
         </table>
-
-
         <br></br>
-
-
     </div>    
 );
 
