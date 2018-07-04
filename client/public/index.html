@@ -1,6 +1,5 @@
 <!doctype html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -28,34 +27,10 @@
       labels: ["Recurring", "One Time Expense", "Emergency"],
       datasets: [{
         label: "Expenses by Category",
-        // backgroundColor: ['rgb(255, 99, 132)',
-        //                   'rgb(54, 162, 235)',
-        //                   'rgb(255, 206, 86)'],
-        
-        // borderColor: 'rgb(255,255,224)',
-        // data: [6, 5, 1],
-
-
-        data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
+        backgroundColor: ['#3993DD', '#F4EBE8', '#6A3E37'],
+        borderColor: '#000000',
+        data: [6, 5, 1],
             borderWidth: 1
-
-
       }]
     },
     options: {}
@@ -74,53 +49,6 @@
     },
     options: {}
   });
-=======
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="theme-color" content="#000000">
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">                   <!--       Change This - DLO -->
-    <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Playfair+Display" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-    <title>Back Alley Stash</title>
-  </head>
-  <body>
-    <noscript>
-      You need to enable JavaScript to run this app.
-    </noscript>
-    <div id="root"></div>
-  </body>
-  <script>
-    var ctx = document.getElementById('CategoryChart').getContext('2d');
-    var chart = new Chart(ctx, {
-      type: 'doughnut',
-      data: {
-        labels: ["Recurring", "One Time Expense", "Emergency"],
-        datasets: [{
-          label: "Expenses by Category",
-          backgroundColor: 'rgb(29, 30, 119)',
-          borderColor: 'rgb(87, 30, 52)',
-          data: [6, 5, 1],
-        }]
-      },
-      options: {}
-    });
-    var ctx = document.getElementById('Stash').getContext('2d');
-    var chart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["Your Stash"],
-        datasets: [{
-          label: "Your Back Alley Stash",
-          backgroundColor: 'rgb(128,0,0)',
-          borderColor: 'rgb(255,255,224)',
-          data: [10, 12, 15],
-        }]
-      },
-      options: {}
-    });
+
 </script>
 </html>
