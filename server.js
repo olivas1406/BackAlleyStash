@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 const app = express();
 
 // Define middleware here
@@ -15,15 +15,36 @@ if (process.env.NODE_ENV === "production") {
 // Define routes here
 const db = require("./models");
 
-// Send every other request to the React app
-// Define any API routes before this runs
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "./client/public/index.html"));
+// app.get("/", (req, res) => {
+//   res.sendFile(path.join(__dirname, "./client/public/index.html"));
+// });
+
+// Get route to /api/transaction
+app.get("/api/transaction", (req, res) => {
+  db.Transaction.findAll({}).then(data => {
+    console.log(data);
+    res.json(data);
+  });
 });
 
-app.get("/api/transaction", (req, res) => {
-  db.Expense.findAll({}).then(data => {
+// Post route to /api/transaction\
+app.post("/api/transaction", (req, res) => {
+  db.Transaction.create(req.body).then(data => {
+    res.json(data);
+  });
+});
+
+// Get route to /api/user
+app.get("/api/user", (req, res) => {
+  db.User.findAll({}).then(data => {
     console.log(data);
+    res.json(data);
+  });
+});
+
+// Post route to /api/user
+app.post("/api/user", (req, res) => {
+  db.User.create(req.body).then(data => {
     res.json(data);
   });
 });
