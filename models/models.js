@@ -46,7 +46,7 @@ var stash = module.exports = {
     {
       transactionId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
       timeStamp: {type: Sequelize.DATE(6), allowNull: false},
-      transactionDesc: {type.Sequelize.STRING, allowNull: false},
+      transactionDesc: {type: Sequelize.STRING, allowNull: false},
       categoryDesc: {type: Sequelize.STRING, len: 255, allowNull: false},
       amount: {type: Sequelize.FLOAT, allowNull: false},
       balance: {type: Sequelize.FLOAT, allowNull: false}
@@ -129,7 +129,7 @@ stash.Categories.hasMany(stash.Transactions, {foreignKey: 'categoryId' source: '
 stash.Transaction.belongsTo(stash.Categories, {foreignKey: 'categoryId' target: 'categoryDesc'});
 
 stash.Account.hasMany(stash.Transaction, {foreignKey: 'transactionId' source: 'amount' source: 'balance'});
-stash.Transaction.belongsTo(stash.Account, {foreignKey: 'transactionID' target: 'amount' target: 'balance'});
+stash.Transaction.belongsTo(stash.Account, {foreignKey: 'transactionId' target: 'amount' target: 'balance'});
 
 stash.User.hasMany(stash.Transaction, {foreignKey: 'userId' });
 stash.Transaction.belongsTo(stash.User, {foreignKey: 'userID' });
