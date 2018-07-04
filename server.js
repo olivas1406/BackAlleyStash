@@ -15,9 +15,9 @@ if (process.env.NODE_ENV === "production") {
 // Define routes here
 const db = require("./models");
 
-// app.get("/", (req, res) => {
-//   res.sendFile(path.join(__dirname, "./client/public/index.html"));
-// });
+app.get("/", (req, res) => {
+  res.send("See routes: /api/transaction or /api/user");
+});
 
 // Get route to /api/transaction
 app.get("/api/transaction", (req, res) => {
