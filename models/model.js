@@ -2,7 +2,7 @@ var Sequelize = require('sequelize');
 var db_config = require('../config/models.json');
 var db = new Sequelize(db_config.database, db_config.user, db_config.password, db_config.server);
 
-var self = module.exports = {
+var stash = module.exports = {
   /** Sequel Object **/
   'db' : db,
 
@@ -42,11 +42,14 @@ var self = module.exports = {
   ),
 
 
-  Office: db.define('offices',
+  transactions: db.define('offices',
     {
-      id: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
-      code: {type: Sequelize.STRING, len: 255, allowNull: false},
-      address: {type: Sequelize.STRING, len: 255, allowNull: false}
+      transactionId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
+      timeStamp: {type: Sequelize.DATE(6), allowNull: false},
+      transactionDesc: {type.Sequelize.STRING, allowNull: false},
+      categoryDesc: {type: Sequelize.STRING, len: 255, allowNull: false},
+      amount: {type: Sequelize.FLOAT, allowNull: false},
+      balance: {type: Sequelize.FLOAT, allowNull: false}
     },
     {
       charset: 'utf8',
@@ -94,6 +97,7 @@ var self = module.exports = {
   Account: db.define('accounts',
     {
       accountId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
+
       userId: {type: Sequelize.INTEGER, allowNull: false},
       accountTypeDesc: {type: Sequelize.STRING, allowNull: false},
       transactionId: {type: Sequelize.INTEGER, allowNull: false},
@@ -112,20 +116,29 @@ var self = module.exports = {
   )
 };
 //sets many to many relationship between these two tables
-self.User.belongsToMany(Account, {through: 'userIdaccountId'})
-self.Account.belongsToMany(User, {through: 'userIdaccountId'})
+stash.User.belongsToMany(Account, {through: 'userIdaccountId'})
+stash.Account.belongsToMany(User, {through: 'userIdaccountId'})
 
 //relationship between account type and accounts, each account belongs to one type, each type has many accounts.
-self.AccountType.hasMany(self.Account, {foreignKey: 'accounttypeId' source: 'accountTypeDesc'});
-self.Account.belongsTo(self.AccountType, {foreignKey: 'accounttypeId' target: 'accountTypeDesc'});
+stash.AccountType.hasMany(stash.Account, {foreignKey: 'accounttypeId' source: 'accountTypeDesc'});
+stash.Account.belongsTo(stash.AccountType, {foreignKey: 'accounttypeId' target: 'accountTypeDesc'});
 //relationship between caterogires type and tranactions, each transaction belongs to one category, 
 //each category has many transactions.
 
-self.Categories.hasMany(self.Transactions, {foreignKey: 'categoryId' source: 'categoryDesc'});
-self.Transaction.belongsTo(self.Categories, {foreignKey: 'categoryId' target: 'categoryDesc'});
+stash.Categories.hasMany(stash.Transactions, {foreignKey: 'categoryId' source: 'categoryDesc'});
+stash.Transaction.belongsTo(stash.Categories, {foreignKey: 'categoryId' target: 'categoryDesc'});
+
+stash.Account.hasMany(stash.Transaction, {foreignKey: 'transactionId' source: 'amount' source: 'balance'});
+stash.Transaction.belongsTo(stash.Account, {foreignKey: 'transactionID' target: 'amount' target: 'balance'});
+
+stash.User.hasMany(stash.Transaction, {foreignKey: 'userId' });
+stash.Transaction.belongsTo(stash.User, {foreignKey: 'userID' });
+
+stash.AccountType.hasMany(stash.Transaction, {foreignKey: 'accountTypeId' });
+stash.Transaction.belongsTo(stash.AccountType, {foreignKey: 'accountTypeId' });
 
 
 
 //One to one relationship between authenticaion and user
-self.User.hasOne(authentication, {foreignKey: 'userID'}); 
-self.Authentication.belongsTo(user);
+stash.User.hasOne(authentication, {foreignKey: 'userID'}); 
+stash.Authentication.belongsTo(user);
