@@ -3,6 +3,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
+const sequelize = require("sequelize");
+const mysql = require("mysql");
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
