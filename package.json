@@ -1,7 +1,7 @@
 {
   "name": "backalleystash",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1> <p align=\"center\"> Back Alley Stash </p> </h1>",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -16,5 +16,13 @@
   "bugs": {
     "url": "https://github.com/olivas1406/BackAlleyStash/issues"
   },
-  "homepage": "https://github.com/olivas1406/BackAlleyStash#readme"
+  "homepage": "https://github.com/olivas1406/BackAlleyStash#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "path": "^0.12.7",
+    "sequelize": "^4.38.0"
+  },
+  "devDependencies": {}
 }
