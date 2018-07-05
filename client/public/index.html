@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.0.0/journal/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css?family=IM+Fell+English+SC|Playfair+Display" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Encode+Sans+Condensed" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
   <title>Back Alley Stash</title>
 </head>
@@ -20,6 +20,7 @@
   <div id="root"></div>
 </body>
 <script>
+  
   var ctx = document.getElementById('CategoryChart').getContext('2d');
   var chart = new Chart(ctx, {
     type: 'doughnut',
@@ -42,9 +43,9 @@
       labels: ["Your Stash"],
       datasets: [{
         label: "Your Back Alley Stash",
-        backgroundColor: 'rgb(128,110,0)',
+        backgroundColor: '#FFEE00',
         borderColor: 'rgb(255,255,224)',
-        data: [10, 12, 15],
+        data: [3, 10, 12, 25],
       }]
     },
     options: {}

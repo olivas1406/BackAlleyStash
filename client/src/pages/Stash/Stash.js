@@ -7,7 +7,7 @@ class YourStash extends Component {
     return (
       <div>
         <div className="StashTitle">Your Stash
-        </div>
+        </div>{this.props.children}
         <Stash />
       </div>
     );
