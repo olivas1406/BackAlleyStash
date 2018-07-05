@@ -1,7 +1,7 @@
 const express = require("express");
-const path = require("path");
 const bodyParser = require("body-parser");
-const PORT = process.env.PORT || 3001;
+const path = require("path");
+const PORT = process.env.PORT || 3000;
 const app = express();
 const sequelize = require("sequelize");
 const mysql = require("mysql");
@@ -15,13 +15,44 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Define routes here
+const db = require("./models");
 
-// Send every other request to the React app
-// Define any API routes before this runs
-app.get("*", (req, res) => {
-  //code here
+app.get("/", (req, res) => {
+  res.send("See routes: /api/transaction or /api/user");
 });
 
-app.listen(PORT, () => {
-  console.log(`🌎 ==> Server now on port ${PORT}!`);
+// Get route to /api/transaction
+app.get("/api/transaction", (req, res) => {
+  db.Transaction.findAll({}).then(data => {
+    console.log(data);
+    res.json(data);
+  });
+});
+
+// Post route to /api/transaction\
+app.post("/api/transaction", (req, res) => {
+  db.Transaction.create(req.body).then(data => {
+    res.json(data);
+  });
+});
+
+// Get route to /api/user
+app.get("/api/user", (req, res) => {
+  db.User.findAll({}).then(data => {
+    console.log(data);
+    res.json(data);
+  });
+});
+
+// Post route to /api/user
+app.post("/api/user", (req, res) => {
+  db.User.create(req.body).then(data => {
+    res.json(data);
+  });
+});
+
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });

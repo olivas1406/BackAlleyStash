@@ -10,8 +10,10 @@ var stash = module.exports = {
     {
       userId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
       firstname: {type: Sequelize.STRING, allowNull: false}
-      lastname: {type: Sequelize.STRING, allowNull: fale}
-      email: {type: Sequelize.STRING, len: 255, allowNull: false},
+      lastname: {type: Sequelize.STRING, allowNull: false}
+      email: {type: Sequelize.STRING, len: 255, allowNull: false validate: {
+        isEmail: true}
+    }
     },
     {
       charset: 'utf8',

@@ -1,0 +1,10 @@
+.AssetText {
+    text-align: left;
+    font-size: 26px;
+    margin-left: 3%;
+    width: 70%;
+    border: solid 1px maroon;
+    border-radius: 14px;
+    margin: auto;
+    padding: 1%;
+}
