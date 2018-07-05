@@ -7,6 +7,8 @@ import Stash from "./pages/Stash";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 
+import Stashbar from "./components/Stash";
+
 const App = () => (
   <Router>
     <div>
@@ -18,6 +20,7 @@ const App = () => (
         <Route exact path="/Stash" component={Stash} />
         <Route exact path="/Logout" component={Logout} />
       </Switch>
+      {/* <Stashbar /> */}
     </div>
   </Router>
 );

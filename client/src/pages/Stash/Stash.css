@@ -5,3 +5,12 @@
     font-family: 'Playfair Display', serif;
     margin-top: -2%;
 }
+
+#Stash {
+    border: solid 1px #1485CC;
+    border-radius: 14px;
+    width: 80%;
+    height: 60%;
+    display: block;
+    margin: 1% auto 3% auto;
+}
