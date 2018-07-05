@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false,
         primaryKey: true
       },
-      accountTypeDesc: { type: DataTypes.STRING, len: 255, allowNull: false }
+      accountTypeDesc: { type: DataTypes.STRING, allowNull: false }
     },
     {
       charset: "utf8",
@@ -17,5 +17,12 @@ module.exports = (sequelize, DataTypes) => {
       instanceMethods: {}
     }
   );
+  AccountType.associate = models => {
+    AccountType.hasmany(models.Account, {
+      foreignKey: "accountTypeId",
+      source: "accountTypeDesc"
+    });
+    AccountType.hasMany(models.Transaction, { foreignKey: "accountTypeId" });
+  };
   return AccountType;
 };
