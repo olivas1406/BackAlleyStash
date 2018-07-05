@@ -1,18 +1,14 @@
 module.exports = (sequelize, DataTypes) => {
-  const Account = sequelize.define(
-    "Account",
+  const Transaction = sequelize.define(
+    "Transaction",
     {
-      accountId: {
+      transactionId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true
       },
-      userId: {
-        type: DataTypes.INTEGER,
-        allowNull: false
-      },
-      accountTypeDesc: { type: DataTypes.STRING, allowNull: false },
-      transactionId: { type: DataTypes.INTEGER, allowNull: false },
+      transactionDesc: { type: DataTypes.STRING, allowNull: false },
+      categoryDesc: { type: DataTypes.STRING, allowNull: false },
       amount: { type: DataTypes.FLOAT, allowNull: false },
       balance: { type: DataTypes.FLOAT, allowNull: false }
     },
@@ -24,5 +20,5 @@ module.exports = (sequelize, DataTypes) => {
       instanceMethods: {}
     }
   );
-  return Account;
+  return Transaction;
 };
