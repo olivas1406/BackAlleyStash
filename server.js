@@ -1,10 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const path = require("path");
+// const path = require("path");
 const PORT = process.env.PORT || 3000;
 const app = express();
-const sequelize = require("sequelize");
-const mysql = require("mysql");
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -47,6 +45,21 @@ app.get("/api/user", (req, res) => {
 // Post route to /api/user
 app.post("/api/user", (req, res) => {
   db.User.create(req.body).then(data => {
+    res.json(data);
+  });
+});
+
+// Get route to /api/account
+app.get("/api/account", (req, res) => {
+  db.Account.findAll({}).then(data => {
+    console.log(data);
+    res.json(data);
+  });
+});
+
+// Post route to /api/account
+app.post("/api/account", (req, res) => {
+  db.Account.create(req.body).then(data => {
     res.json(data);
   });
 });
