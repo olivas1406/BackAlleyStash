@@ -24,5 +24,17 @@ module.exports = (sequelize, DataTypes) => {
       instanceMethods: {}
     }
   );
+  Account.associate = models => {
+    Account.belongsToMany(models.User, { through: "userIdAccountId" });
+    Account.belongsTo(model.AccountType, {
+      foreignKey: "accountTypeId",
+      target: "accountTypeDesc"
+    });
+    Account.hasMany(models.Transaction, {
+      foreignKey: "transactionId",
+      source: "amount",
+      source: "balance"
+    });
+  };
   return Account;
 };

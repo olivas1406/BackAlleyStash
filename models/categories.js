@@ -2,7 +2,7 @@ module.exports = (sequelize, DataTypes) => {
   const Category = sequelize.define(
     "Category",
     {
-      categoriesId: {
+      categoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true
@@ -17,5 +17,11 @@ module.exports = (sequelize, DataTypes) => {
       instanceMethods: {}
     }
   );
+  Category.associate = models => {
+    Category.hasmany(models.Transaction, {
+      foreignKey: "categoryId",
+      source: "categoryDesc"
+    });
+  };
   return Category;
 };

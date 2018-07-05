@@ -18,5 +18,8 @@ module.exports = (sequelize, DataTypes) => {
       instanceMethods: {}
     }
   );
+  Authentication.associate = models => {
+    Authentication.belongsTo(models.User);
+  };
   return Authentication;
 };
