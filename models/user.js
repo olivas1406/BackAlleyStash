@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
   );
   User.associate = models => {
     User.belongsToMany(models.Account, { through: "userIdAccountId" });
-    User.hasMany(models.Transaction, { foreignKey: "userId" });
-    User.hasOne(models.authentication, { foreignKey: "userID" });
+    User.hasMany(models.Transaction, { foreignKey: "usersId" });
+    User.hasOne(models.Authentication, { foreignKey: "userID" });
   };
 
   return User;
