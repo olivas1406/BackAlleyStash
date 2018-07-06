@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
   );
   Account.associate = models => {
     Account.belongsToMany(models.User, { through: "userIdAccountId" });
-    Account.belongsTo(model.AccountType, {
+    Account.belongsTo(models.AccountType, {
       foreignKey: "accountTypeId",
       target: "accountTypeDesc"
     });

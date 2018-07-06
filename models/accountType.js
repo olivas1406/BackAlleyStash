@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   );
   AccountType.associate = models => {
-    AccountType.hasmany(models.Account, {
+    AccountType.hasMany(models.Account, {
       foreignKey: "accountTypeId",
       source: "accountTypeDesc"
     });
