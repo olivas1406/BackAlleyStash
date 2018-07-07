@@ -14,7 +14,9 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       charset: "utf8",
-      timestamps: false,
+
+      timestamps: true,
+
       freezeTableName: true,
       classMethods: {},
       instanceMethods: {}
@@ -28,7 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     Transaction.belongsTo(models.Account, {
       foreignKey: "transactionId",
       target: "amount",
-      target: "balance"
+
+      target: "balance",
+      target: "categoryDesc",
+      target: "transactionDesc",
+      target: "timeStamp"
+
     });
     Transaction.belongsTo(models.User, { foreignKey: "userID" });
     Transaction.belongsTo(models.AccountType, { foreignKey: "accountTypeId" });

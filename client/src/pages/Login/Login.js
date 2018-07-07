@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import AuthNavbar from "../../components/AuthNavbar";
+import Header from "../../components/Header";
 import "./Login.css";
 
  class Login extends Component {
@@ -29,6 +31,8 @@ import "./Login.css";
   render() {
     return (
       <div className="Login">
+      <AuthNavbar />
+      <Header />
         <form onSubmit={this.handleSubmit}>
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
