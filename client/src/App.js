@@ -17,10 +17,10 @@ const App = () => (
       <Navbar />
       <Header />
       <Switch>
-        <Route exact path="/" component={Home} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/AssetTracker" component={AssetTracker} />
         <Route exact path="/Stash" component={Stash} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/Home" component={Home} />
         <Route exact path="/Logout" component={Logout} />
         
       </Switch>
