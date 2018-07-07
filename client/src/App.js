@@ -7,7 +7,7 @@ import Stash from "./pages/Stash";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
 
-import Stashbar from "./components/Stash";
+// import Stashbar from "./components/Stash";
 
 const App = () => (
   <Router>
