@@ -1,19 +1,40 @@
 module.exports = (sequelize, DataTypes) => {
-  const User = sequelize.define("User", {
-    username: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      validate: {
-        len: [5]
-      }
+  const Account = sequelize.define(
+    "Account",
+    {
+      accountId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        primaryKey: true
+      },
+      userId: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      },
+      accountTypeDesc: { type: DataTypes.STRING, allowNull: false },
+      transactionId: { type: DataTypes.INTEGER, allowNull: false },
+      amount: { type: DataTypes.FLOAT, allowNull: false },
+      balance: { type: DataTypes.FLOAT, allowNull: false }
     },
-    password: {
-      type: DataTypes.TEXT,
-      allowNull: false,
-      validate: {
-        len: [8]
-      }
+    {
+      charset: "utf8",
+      timestamps: false,
+      freezeTableName: true,
+      classMethods: {},
+      instanceMethods: {}
     }
-  });
-  return User;
+  );
+  Account.associate = models => {
+    Account.belongsToMany(models.User, { through: "userIdAccountId" });
+    Account.belongsTo(models.AccountType, {
+      foreignKey: "accountTypeId",
+      target: "accountTypeDesc"
+    });
+    Account.hasMany(models.Transaction, {
+      foreignKey: "transactionId",
+      source: "amount",
+      source: "balance"
+    });
+  };
+  return Account;
 };
