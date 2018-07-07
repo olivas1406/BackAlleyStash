@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+
+.Navbar {
+    background-color: #98C1D9;
+    padding: 1%;
+}
+
+.Links {
+    display: inline;
+    color: white;
+}
