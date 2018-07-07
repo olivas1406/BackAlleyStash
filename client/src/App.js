@@ -9,7 +9,7 @@ import Header from "./components/Header";
 import Login from "./pages/Login";
 
 
-import Stashbar from "./components/Stash";
+// import Stashbar from "./components/Stash";
 
 const App = () => (
   <Router>
