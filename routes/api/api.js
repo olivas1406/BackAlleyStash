@@ -37,19 +37,19 @@ module.exports = app => {
 
   // Get route to /api/account
   app.get("/api/account:bot10", (req, res) => {
-    db.Account.findAll({limit: 10
-    order:[TimeStamp, 'DESC']}).then(data => {
+    db.Account.findAll({limit: 10,
+    Order: [TimeStamp, 'DESC']}).then(data => {
       console.log(data);
       res.json(data);
     });
   });
 
   app.get("/api/account/:last30days", (req, res) => {
-    db.Account.findAll({ where: sequelize.where(sequelize.fn('datediff', sequelize.fn("NOW"))),
-      {$gt: 30}.then(data => {
+    db.Account.findAll({ where: sequelize.where(sequelize.fn('datediff', sequelize.fn("NOW")),
+      {$gt: 30}).then(data => {
       console.log(data);
       res.json(data);
-    });
+    })
   });
 
 
@@ -115,4 +115,3 @@ module.exports = app => {
       res.json(data);
     });
   });
-};
