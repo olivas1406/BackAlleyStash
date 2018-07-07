@@ -11,14 +11,20 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.INTEGER,
         allowNull: false
       },
+
+      timeStamp: {type: Sequelize.DATE(6), allowNull: false},
       accountTypeDesc: { type: DataTypes.STRING, allowNull: false },
-      transactionId: { type: DataTypes.INTEGER, allowNull: false },
+
+      transactionDesc: { type: DataTypes.STRING, allowNull: false },
+      categoryDesc: {tyep: Sequelize.STRING, len: 255, allowNull: false},
       amount: { type: DataTypes.FLOAT, allowNull: false },
       balance: { type: DataTypes.FLOAT, allowNull: false }
+
     },
     {
       charset: "utf8",
-      timestamps: false,
+      timestamps: true,
+
       freezeTableName: true,
       classMethods: {},
       instanceMethods: {}
@@ -33,7 +39,12 @@ module.exports = (sequelize, DataTypes) => {
     Account.hasMany(models.Transaction, {
       foreignKey: "transactionId",
       source: "amount",
-      source: "balance"
+
+      source: "balance",
+      source: "categoryDesc",
+      source: "transactionDesc",
+      source: "timeStamp"
+
     });
   };
   return Account;

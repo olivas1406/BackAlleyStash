@@ -36,12 +36,34 @@ module.exports = app => {
   });
 
   // Get route to /api/account
-  app.get("/api/account", (req, res) => {
+
+  app.get("/api/account/:bot10", (req, res) => {
+    db.Account.findAll({limit: 10
+    order:[TimeStamp, 'DESC']}).then(data => {
+      console.log(data);
+      res.json(data);
+    });
+  });
+
+  app.get("/api/account/:last30days", (req, res) => {
+    db.Account.findAll({ where: sequelize.where(sequelize.fn('datediff', sequelize.fn("NOW"))),
+      {$gt: 30}.then(data => {
+      console.log(data);
+      res.json(data);
+    });
+  });
+
+
+
+
+  app.get("/api/account/", (req, res) => {
+
     db.Account.findAll({}).then(data => {
       console.log(data);
       res.json(data);
     });
   });
+
 
   // Post route to /api/account
   app.post("/api/account", (req, res) => {
