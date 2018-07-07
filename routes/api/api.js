@@ -49,4 +49,49 @@ module.exports = app => {
       res.json(data);
     });
   });
+
+  // Get route to /api/category
+  app.get("/api/category", (req, res) => {
+    db.Category.findAll({}).then(data => {
+      console.log(data);
+      res.json(data);
+    });
+  });
+
+  // Post route to /api/category
+  app.post("/api/category", (req, res) => {
+    db.Category.create(req.body).then(data => {
+      res.json(data);
+    });
+  });
+
+  // Get route to /api/accountType
+  app.get("/api/accountType", (req, res) => {
+    db.AccountType.findAll({}).then(data => {
+      console.log(data);
+      res.json(data);
+    });
+  });
+
+  // Post route to /api/accountType
+  app.post("/api/accountType", (req, res) => {
+    db.AccountType.create(req.body).then(data => {
+      res.json(data);
+    });
+  });
+
+  // Get route to /api/authentication
+  app.get("/api/authentication", (req, res) => {
+    db.Authentication.findAll({}).then(data => {
+      console.log(data);
+      res.json(data);
+    });
+  });
+
+  // Post route to /api/authentication
+  app.post("/api/authentication", (req, res) => {
+    db.Authentication.create(req.body).then(data => {
+      res.json(data);
+    });
+  });
 };
