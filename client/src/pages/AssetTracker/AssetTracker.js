@@ -1,16 +1,11 @@
 import React, { Component } from 'react';
 import Asset from "../../components/Asset";
-import Navbar from "../../components/Navbar";
-import Header from "../../components/Header";
 import "./AssetTracker.css"
 
 class AssetTracker extends Component {
   render() {
     return (
       <div>
-      <Navbar />
-      <Header />
-      
         <div className="AtTitle">Asset Tracker
         </div>
         <br />
