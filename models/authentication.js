@@ -5,14 +5,14 @@ module.exports = (sequelize, DataTypes) => {
       authenticationId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+        primaryKey: true
       },
       login: { type: DataTypes.STRING, allowNull: false },
       password: { type: DataTypes.STRING, allowNull: false }
     },
     {
       charset: "utf8",
+      timestamps: false,
       freezeTableName: true,
       classMethods: {},
       instanceMethods: {}

@@ -5,13 +5,14 @@ module.exports = (sequelize, DataTypes) => {
       categoryId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true,
-        autoIncrement: true
+        primaryKey: true
       },
-      CategoryDesc: { type: DataTypes.TEXT, allowNull: false }
+      CategoryDesc: { type: DataTypes.STRING, allowNull: false }
     },
     {
       charset: "utf8",
+      timestamps: false,
+      freezeTableName: true,
       classMethods: {},
       instanceMethods: {}
     }
