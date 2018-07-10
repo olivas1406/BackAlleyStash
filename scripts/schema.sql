@@ -1,12 +1,13 @@
 /*
 Created: 6/30/2018
-Modified: 6/30/2018
+Modified: 7/7/2018
 Model: MySQL 5.7
 Database: MySQL 5.7
 */
-CREATE SCHEMA stash;
--------------------------------------------------
-USE stash;
+
+
+-- Create tables section -------------------------------------------------
+
 -- Table Users
 
 CREATE TABLE `Users`
@@ -42,7 +43,7 @@ CREATE TABLE `Transactions`
   `TimeStamp` Timestamp NOT NULL,
   `TransactionDesc` Char(50) NOT NULL,
   `Amount` Decimal(10,2) NOT NULL,
-  `Balance` Decimal(10,2) NOT NULL,
+  `Balance` Decimal(100,2) NOT NULL,
   `UserID` Int NOT NULL,
   `AccountID` Int NOT NULL,
   `AccountTypeID` Int NOT NULL,
@@ -56,8 +57,11 @@ CREATE TABLE `Transactions`
 CREATE TABLE `Accounts`
 (
   `AccountID` Int NOT NULL AUTO_INCREMENT,
-  `Type` Char(30) NOT NULL,
-  `Description` Char(50),
+  `userID` Char(30) NOT NULL,
+  `accountTypeDesc` Char(50) NOT NULL,
+  `transactionDesc` Char(100) NOT NULL,
+  `amount` Float NOT NULL,
+  `balance` Float(0) NOT NULL,
   `AccountTypeID` Int NOT NULL,
   PRIMARY KEY (`AccountID`,`AccountTypeID`)
 )

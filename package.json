@@ -1,7 +1,7 @@
 {
   "name": "backalleystash",
   "version": "1.0.0",
-  "description": "<h1> <p align=\"center\"> Back Alley Stash </p> </h1>",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -20,23 +20,9 @@
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> 13058815eea16987af21a683b0a838db18e9085d
-    "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "path": "^0.12.7",
     "sequelize": "^4.38.0"
   },
   "devDependencies": {}
-<<<<<<< HEAD
-=======
-    "mysql2": "^1.5.3",
-    "path": "^0.12.7",
-    "sequelize": "^4.38.0"
-  }
->>>>>>> 3cc3847ee55e8d20f5c8c2cb7fb1bb5d2feb1afd
-=======
->>>>>>> 13058815eea16987af21a683b0a838db18e9085d
 }

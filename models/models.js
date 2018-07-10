@@ -1,5 +1,5 @@
 var Sequelize = require('sequelize');
-var db_config = require('../config/models.json');
+var db_config = require('../config/config.json');
 var db = new Sequelize(db_config.database, db_config.user, db_config.password, db_config.server);
 
 var stash = module.exports = {
@@ -9,9 +9,9 @@ var stash = module.exports = {
   User: db.define('users',
     {
       userId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
-      firstname: {type: Sequelize.STRING, allowNull: false}
-      lastname: {type: Sequelize.STRING, allowNull: false}
-      email: {type: Sequelize.STRING, len: 255, allowNull: false validate: {
+      firstname: {type: Sequelize.STRING, allowNull: false},
+      lastname: {type: Sequelize.STRING, allowNull: false},
+      email: {type: Sequelize.STRING, len: 255, allowNull: false, validate: {
         isEmail: true}
     }
     },
@@ -26,11 +26,11 @@ var stash = module.exports = {
     }
   ),
 
-    authentication: db.define('authentication'),
+    authentication: db.define('authentication',
     {
       authenticationId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
-      login: {type: Sequelize.STRING, len: 255, allowNull: false}
-      password: {type: Sequelize.STRING, len: 10, allowNull: false}
+      login: {type: Sequelize.STRING, len: 255, allowNull: false},
+      password: {type: Sequelize.STRING, len: 10, allowNull: false},
     },
     {
       charset: 'utf8',
@@ -44,7 +44,7 @@ var stash = module.exports = {
   ),
 
 
-  transactions: db.define('offices',
+  transactions: db.define('transactions',
     {
       transactionId: {type: Sequelize.INTEGER, allowNull: false, primaryKey: true},
       timeStamp: {type: Sequelize.DATE(6), allowNull: false},
@@ -122,16 +122,16 @@ stash.User.belongsToMany(Account, {through: 'userIdaccountId'})
 stash.Account.belongsToMany(User, {through: 'userIdaccountId'})
 
 //relationship between account type and accounts, each account belongs to one type, each type has many accounts.
-stash.AccountType.hasMany(stash.Account, {foreignKey: 'accounttypeId' source: 'accountTypeDesc'});
-stash.Account.belongsTo(stash.AccountType, {foreignKey: 'accounttypeId' target: 'accountTypeDesc'});
+stash.AccountType.hasMany(stash.Account, {foreignKey: 'accounttypeId', source: 'accountTypeDesc'});
+stash.Account.belongsTo(stash.AccountType, {foreignKey: 'accounttypeId', target: 'accountTypeDesc'});
 //relationship between caterogires type and tranactions, each transaction belongs to one category, 
 //each category has many transactions.
 
-stash.Categories.hasMany(stash.Transactions, {foreignKey: 'categoryId' source: 'categoryDesc'});
-stash.Transaction.belongsTo(stash.Categories, {foreignKey: 'categoryId' target: 'categoryDesc'});
+stash.Categories.hasMany(stash.Transactions, {foreignKey: 'categoryId', source: 'categoryDesc'});
+stash.Transaction.belongsTo(stash.Categories, {foreignKey: 'categoryId', target: 'categoryDesc'});
 
-stash.Account.hasMany(stash.Transaction, {foreignKey: 'transactionId' source: 'amount' source: 'balance'});
-stash.Transaction.belongsTo(stash.Account, {foreignKey: 'transactionId' target: 'amount' target: 'balance'});
+stash.Account.hasMany(stash.Transaction, {foreignKey: 'transactionId', source: 'amount', source: 'balance'});
+stash.Transaction.belongsTo(stash.Account, {foreignKey: 'transactionId', target: 'amount', target: 'balance'});
 
 stash.User.hasMany(stash.Transaction, {foreignKey: 'userId' });
 stash.Transaction.belongsTo(stash.User, {foreignKey: 'userID' });
