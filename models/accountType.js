@@ -5,13 +5,13 @@ module.exports = (sequelize, DataTypes) => {
       accountTypeId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
-      accountTypeDesc: { type: DataTypes.STRING, allowNull: false }
+      accountTypeDesc: { type: DataTypes.TEXT, allowNull: false }
     },
     {
       charset: "utf8",
-      timestamps: false,
       freezeTableName: true,
       classMethods: {},
       instanceMethods: {}
