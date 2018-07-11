@@ -1,9 +1,3 @@
-/*
-Created: 6/30/2018
-Modified: 7/7/2018
-Model: MySQL 5.7
-Database: MySQL 5.7
-*/
 
 
 -- Create tables section -------------------------------------------------
@@ -13,10 +7,14 @@ Database: MySQL 5.7
 CREATE TABLE `Users`
 (
   `UserID` Int NOT NULL AUTO_INCREMENT,
-  `UserFirstName` Char(50) NOT NULL,
-  `UserLastName` Char(50) NOT NULL,
-  `UserEmail` Char(50) NOT NULL,
-  PRIMARY KEY (`UserID`)
+  `UserFirstName` Char
+(50) NOT NULL,
+  `UserLastName` Char
+(50) NOT NULL,
+  `UserEmail` Char
+(50) NOT NULL,
+  PRIMARY KEY
+(`UserID`)
 )
  AUTO_INCREMENT = 1
 ;
@@ -26,12 +24,15 @@ CREATE TABLE `Users`
 CREATE TABLE `Authentication`
 (
   `AuthenticationID` Int NOT NULL AUTO_INCREMENT,
-  `Login` Char(40) NOT NULL
+  `Login` Char
+(40) NOT NULL
  COMMENT 'User login name',
-  `Password` Char(8) NOT NULL
+  `Password` Char
+(8) NOT NULL
  COMMENT 'Password, must be 8 characters',
   `UserID` Int NOT NULL,
-  PRIMARY KEY (`AuthenticationID`,`UserID`)
+  PRIMARY KEY
+(`AuthenticationID`,`UserID`)
 )
 ;
 
@@ -41,14 +42,18 @@ CREATE TABLE `Transactions`
 (
   `TransactionID` Int NOT NULL AUTO_INCREMENT,
   `TimeStamp` Timestamp NOT NULL,
-  `TransactionDesc` Char(50) NOT NULL,
-  `Amount` Decimal(10,2) NOT NULL,
-  `Balance` Decimal(100,2) NOT NULL,
+  `TransactionDesc` Char
+(50) NOT NULL,
+  `Amount` Decimal
+(10,2) NOT NULL,
+  `Balance` Decimal
+(100,2) NOT NULL,
   `UserID` Int NOT NULL,
   `AccountID` Int NOT NULL,
   `AccountTypeID` Int NOT NULL,
   `CategoryID` Int NOT NULL,
-  PRIMARY KEY (`TransactionID`,`UserID`,`AccountID`,`AccountTypeID`,`CategoryID`)
+  PRIMARY KEY
+(`TransactionID`,`UserID`,`AccountID`,`AccountTypeID`,`CategoryID`)
 )
 ;
 
@@ -57,13 +62,18 @@ CREATE TABLE `Transactions`
 CREATE TABLE `Accounts`
 (
   `AccountID` Int NOT NULL AUTO_INCREMENT,
-  `userID` Char(30) NOT NULL,
-  `accountTypeDesc` Char(50) NOT NULL,
-  `transactionDesc` Char(100) NOT NULL,
+  `userID` Char
+(30) NOT NULL,
+  `accountTypeDesc` Char
+(50) NOT NULL,
+  `transactionDesc` Char
+(100) NOT NULL,
   `amount` Float NOT NULL,
-  `balance` Float(0) NOT NULL,
+  `balance` Float
+(0) NOT NULL,
   `AccountTypeID` Int NOT NULL,
-  PRIMARY KEY (`AccountID`,`AccountTypeID`)
+  PRIMARY KEY
+(`AccountID`,`AccountTypeID`)
 )
 ;
 
@@ -72,10 +82,13 @@ CREATE TABLE `Accounts`
 CREATE TABLE `AccountTypes`
 (
   `AccountTypeID` Int NOT NULL AUTO_INCREMENT,
-  `AccountTypeDesc` Char(30) NOT NULL
+  `AccountTypeDesc` Char
+(30) NOT NULL
  COMMENT 'Types, such as checking, savings, money market',
-  `InterestRate` Decimal(10,2) NOT NULL,
-  PRIMARY KEY (`AccountTypeID`)
+  `InterestRate` Decimal
+(10,2) NOT NULL,
+  PRIMARY KEY
+(`AccountTypeID`)
 )
 ;
 
@@ -89,7 +102,9 @@ CREATE TABLE `UserAccount`
 )
 ;
 
-ALTER TABLE `UserAccount` ADD PRIMARY KEY (`UserID`,`AccountID`,`AccountTypeID`)
+ALTER TABLE `UserAccount`
+ADD PRIMARY KEY
+(`UserID`,`AccountID`,`AccountTypeID`)
 ;
 
 -- Table Categories
@@ -97,35 +112,67 @@ ALTER TABLE `UserAccount` ADD PRIMARY KEY (`UserID`,`AccountID`,`AccountTypeID`)
 CREATE TABLE `Categories`
 (
   `CategoryID` Int NOT NULL AUTO_INCREMENT,
-  `CategoryDescription` Char(50) NOT NULL,
-  PRIMARY KEY (`CategoryID`)
+  `CategoryDescription` Char
+(50) NOT NULL,
+  PRIMARY KEY
+(`CategoryID`)
 )
 ;
 
 -- Create foreign keys (relationships) section ------------------------------------------------- 
 
 
-ALTER TABLE `Authentication` ADD CONSTRAINT `Relationship1` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `Authentication`
+ADD CONSTRAINT `Relationship1` FOREIGN KEY
+(`UserID`) REFERENCES `Users`
+(`UserID`) ON
+DELETE RESTRICT ON
+UPDATE RESTRICT
 ;
 
 
-ALTER TABLE `UserAccount` ADD CONSTRAINT `Relationship10` FOREIGN KEY (`UserID`) REFERENCES `Users` (`UserID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `UserAccount`
+ADD CONSTRAINT `Relationship10` FOREIGN KEY
+(`UserID`) REFERENCES `Users`
+(`UserID`) ON
+DELETE RESTRICT ON
+UPDATE RESTRICT
 ;
 
 
-ALTER TABLE `UserAccount` ADD CONSTRAINT `Relationship11` FOREIGN KEY (`AccountID`, `AccountTypeID`) REFERENCES `Accounts` (`AccountID`, `AccountTypeID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `UserAccount`
+ADD CONSTRAINT `Relationship11` FOREIGN KEY
+(`AccountID`, `AccountTypeID`) REFERENCES `Accounts`
+(`AccountID`, `AccountTypeID`) ON
+DELETE RESTRICT ON
+UPDATE RESTRICT
 ;
 
 
-ALTER TABLE `Accounts` ADD CONSTRAINT `Relationship12` FOREIGN KEY (`AccountTypeID`) REFERENCES `AccountTypes` (`AccountTypeID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `Accounts`
+ADD CONSTRAINT `Relationship12` FOREIGN KEY
+(`AccountTypeID`) REFERENCES `AccountTypes`
+(`AccountTypeID`) ON
+DELETE RESTRICT ON
+UPDATE RESTRICT
 ;
 
 
-ALTER TABLE `Transactions` ADD CONSTRAINT `Relationship13` FOREIGN KEY (`UserID`, `AccountID`, `AccountTypeID`) REFERENCES `UserAccount` (`UserID`, `AccountID`, `AccountTypeID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `Transactions`
+ADD CONSTRAINT `Relationship13` FOREIGN KEY
+(`UserID`, `AccountID`, `AccountTypeID`) REFERENCES `UserAccount`
+(`UserID`, `AccountID`, `AccountTypeID`) ON
+DELETE RESTRICT ON
+UPDATE RESTRICT
 ;
 
 
-ALTER TABLE `Transactions` ADD CONSTRAINT `Relationship14` FOREIGN KEY (`CategoryID`) REFERENCES `Categories` (`CategoryID`) ON DELETE RESTRICT ON UPDATE RESTRICT
+ALTER TABLE `Transactions`
+ADD CONSTRAINT `Relationship14` FOREIGN KEY
+(`CategoryID`) REFERENCES `Categories`
+(`CategoryID`) ON
+DELETE RESTRICT ON
+UPDATE RESTRICT
 ;
 
 

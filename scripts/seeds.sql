@@ -1,3 +1,4 @@
+
 use stash;
 INSERT into user
     (firstname, lastname, email, createdAT, UpdatedAt)
@@ -56,5 +57,6 @@ INSERT INTO transaction
 VALUES
     ('anime posters from comic store', 'Shopping', 40.44, 100.00, NOW(), NOW(), 1, 12, 2, 2),
     ('Wells Fargo AutoLoan', 'Credit Card/Loan Payments', 599.00, 10000.00, NOW(), NOW(), 1, 5, 1, 1);
+
 
 
