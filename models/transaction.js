@@ -5,16 +5,16 @@ module.exports = (sequelize, DataTypes) => {
       transactionId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
-      transactionDesc: { type: DataTypes.STRING, allowNull: false },
-      categoryDesc: { type: DataTypes.STRING, allowNull: false },
+      transactionDesc: { type: DataTypes.TEXT, allowNull: false },
+      categoryDesc: { type: DataTypes.TEXT, allowNull: false },
       amount: { type: DataTypes.FLOAT, allowNull: false },
       balance: { type: DataTypes.FLOAT, allowNull: false }
     },
     {
       charset: "utf8",
-      timestamps: true,
       freezeTableName: true,
       classMethods: {},
       instanceMethods: {}
@@ -30,8 +30,7 @@ module.exports = (sequelize, DataTypes) => {
       target: "amount",
       target: "balance",
       target: "categoryDesc",
-      target: "transactionDesc",
-      target: "timeStamp"
+      target: "transactionDesc"
     });
     Transaction.belongsTo(models.User, { foreignKey: "userID" });
     Transaction.belongsTo(models.AccountType, { foreignKey: "accountTypeId" });

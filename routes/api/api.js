@@ -36,24 +36,37 @@ module.exports = app => {
   });
 
   // Get route to /api/account
+<<<<<<< HEAD
   app.get("/api/account:bot10", (req, res) => {
     db.Account.findAll({limit: 10,
     Order: [TimeStamp, 'DESC']}).then(data => {
+=======
+
+  app.get("/api/account/:bot10", (req, res) => {
+    db.Account.findAll({
+      limit: 10,
+      order: [TimeStamp, "DESC"]
+    }).then(data => {
+>>>>>>> origin
       console.log(data);
       res.json(data);
     });
   });
 
   app.get("/api/account/:last30days", (req, res) => {
+<<<<<<< HEAD
     db.Account.findAll({ where: sequelize.where(sequelize.fn('datediff', sequelize.fn("NOW")),
       {$gt: 30}).then(data => {
+=======
+    db.Account.findAll({
+      where: sequelize.where(sequelize.fn("datediff", sequelize.fn("NOW"))),
+      $gt: 30
+    }).then(data => {
+>>>>>>> origin
       console.log(data);
       res.json(data);
     })
   });
-
-
-
 
   app.get("/api/account/", (req, res) => {
     db.Account.findAll({}).then(data => {
@@ -61,8 +74,6 @@ module.exports = app => {
       res.json(data);
     });
   });
-
-
 
   // Post route to /api/account
   app.post("/api/account", (req, res) => {
@@ -115,3 +126,59 @@ module.exports = app => {
       res.json(data);
     });
   });
+<<<<<<< HEAD
+=======
+};
+
+// DELETE ROUTE to specific account by id
+// app.delete("/api/account/:id", (req, res) => {
+//   db.Account.destroy({
+//     where: {
+//       id: req.params.id
+//     }
+//   }).then(stash => {
+//     res.json(stash);
+//   });
+// });
+
+// UPDATE ROUTE to update specific account by id
+// app.put("/api/account/:id", (req, res) => {
+//   db.Account.update(req.body, {
+//     where: {
+//       id: req.body.id
+//     }
+//   }).then(stash => {
+//     res.json(stash);
+//   });
+// });
+
+// DELETE SPECIFIC  JS
+//   function deletePost(id) {
+//   $.ajax({
+//     method: "DELETE",
+//     url: "/api/posts/" + id
+//   }).then(function() {
+//     getPosts(postCategorySelect.val());
+//   });
+// }
+
+// DELETE REQUEST  JS
+// function handlePostDelete() {
+//   var currentPost = $(this)
+//     .parent()
+//     .parent()
+//     .data("post");
+//   deletePost(currentPost.id);
+// }
+
+// UPDATE REQUEST  JS
+// // This function figures out which post we want to edit and takes it to the
+// // Appropriate url
+// function handlePostEdit() {
+//   var currentPost = $(this)
+//     .parent()
+//     .parent()
+//     .data("post");
+//   window.location.href = "/cms?post_id=" + currentPost.id;
+// }
+>>>>>>> origin
