@@ -1,4 +1,5 @@
 const db = require("../models");
+const passport = require("passport");
 
 module.exports = app => {
     // auth login
@@ -14,9 +15,8 @@ module.exports = app => {
 });
 
     // auth with google
-  app.get("/google", (req, res) => {
-    // handle with passport
-    res.send("Logging in with google!")
-});
+  app.get("/google", passport.authenticate('google', {
+    scope: ['profile']
+  }));
 
 }

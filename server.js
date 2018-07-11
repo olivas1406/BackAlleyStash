@@ -4,6 +4,7 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const sequelize = require("sequelize");
+const passportSetup = require('./config/passport-setup');
 
 // Define middleware here
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -30,11 +31,8 @@ db.sequelize.sync({ force: true }).then(function() {
     console.log("App listening on PORT " + PORT);
   });
 });
-<<<<<<< HEAD
 
 // checkout concurrently to install into package.json to connect front and back servers 
-=======
 // app.listen(PORT, function() {
 //   console.log("App listening on PORT " + PORT);
 // });
->>>>>>> master
