@@ -8,7 +8,8 @@ module.exports = (sequelize, DataTypes) => {
         primaryKey: true,
         autoIncrement: true
       },
-      accountTypeDesc: { type: DataTypes.TEXT, allowNull: false }
+      accountTypeDesc: { type: DataTypes.TEXT, allowNull: false },
+      interestRate: { type: DataTypes.FLOAT, allowNull: false }
     },
     {
       charset: "utf8",
