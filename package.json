@@ -1,7 +1,7 @@
 {
   "name": "backalleystash",
   "version": "1.0.0",
-  "description": "<h1> <p align=\"center\"> Back Alley Stash </p> </h1>",
+  "description": "",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -21,7 +21,6 @@
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",
     "express": "^4.16.3",
-    "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",

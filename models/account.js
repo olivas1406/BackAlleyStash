@@ -5,20 +5,25 @@ module.exports = (sequelize, DataTypes) => {
       accountId: {
         type: DataTypes.INTEGER,
         allowNull: false,
-        primaryKey: true
+        primaryKey: true,
+        autoIncrement: true
       },
       userId: {
         type: DataTypes.INTEGER,
         allowNull: false
       },
-      accountTypeDesc: { type: DataTypes.STRING, allowNull: false },
-      transactionId: { type: DataTypes.INTEGER, allowNull: false },
+      accountTypeDesc: { type: DataTypes.TEXT, allowNull: false },
+      transactionDesc: { type: DataTypes.TEXT, allowNull: false },
+      categoryDesc: {
+        type: DataTypes.TEXT,
+        validate: { len: [1] },
+        allowNull: false
+      },
       amount: { type: DataTypes.FLOAT, allowNull: false },
       balance: { type: DataTypes.FLOAT, allowNull: false }
     },
     {
       charset: "utf8",
-      timestamps: false,
       freezeTableName: true,
       classMethods: {},
       instanceMethods: {}
@@ -33,7 +38,9 @@ module.exports = (sequelize, DataTypes) => {
     Account.hasMany(models.Transaction, {
       foreignKey: "transactionId",
       source: "amount",
-      source: "balance"
+      source: "balance",
+      source: "categoryDesc",
+      source: "transactionDesc"
     });
   };
   return Account;
