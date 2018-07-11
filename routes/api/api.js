@@ -50,7 +50,7 @@ module.exports = app => {
   app.get("/api/account/:last30days", (req, res) => {
     db.Account.findAll({
       where: sequelize.where(sequelize.fn("datediff", sequelize.fn("NOW"))),
-      $gt: 30
+      [OP.gt]: 30
     }).then(data => {
       console.log(data);
       res.json(data);
