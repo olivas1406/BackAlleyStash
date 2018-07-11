@@ -51,12 +51,10 @@ VALUES
     (1, 'Checking', 'Wells Fargo AutoLoan', 'Credit Card/Loan Payments', 599, 10000.00, NOW(), NOW(),
         1);
 
-/*This has issues due to key constraints*/
 INSERT INTO transaction
-    (transactiondesc, categorydesc, amount, balance, createdAT, UpdatedAT, accountTypeID, CategoryID, UserID, usersID)
+    (transactionID, transactiondesc, categorydesc, amount, balance, createdAT, UpdatedAT, accountTypeID, CategoryID, UserID, usersID)
 VALUES
-    ('anime posters from comic store', 'Shopping', 40.44, 100.00, NOW(), NOW(), 1, 12, 2, 2),
-    ('Wells Fargo AutoLoan', 'Credit Card/Loan Payments', 599.00, 10000.00, NOW(), NOW(), 1, 5, 1, 1);
-
+    (1, 'anime posters from comic store', 'Shopping', 40.44, 100.00, NOW(), NOW(), 1, 12, 2, 2),
+    (2, 'Wells Fargo AutoLoan', 'Credit Card/Loan Payments', 599.00, 10000.00, NOW(), NOW(), 1, 5, 1, 1);
 
 
