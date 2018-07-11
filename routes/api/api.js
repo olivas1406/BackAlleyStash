@@ -36,36 +36,25 @@ module.exports = app => {
   });
 
   // Get route to /api/account
-<<<<<<< HEAD
-  app.get("/api/account:bot10", (req, res) => {
-    db.Account.findAll({limit: 10,
-    Order: [TimeStamp, 'DESC']}).then(data => {
-=======
 
   app.get("/api/account/:bot10", (req, res) => {
     db.Account.findAll({
       limit: 10,
       order: [TimeStamp, "DESC"]
     }).then(data => {
->>>>>>> origin
       console.log(data);
       res.json(data);
     });
   });
 
   app.get("/api/account/:last30days", (req, res) => {
-<<<<<<< HEAD
-    db.Account.findAll({ where: sequelize.where(sequelize.fn('datediff', sequelize.fn("NOW")),
-      {$gt: 30}).then(data => {
-=======
     db.Account.findAll({
       where: sequelize.where(sequelize.fn("datediff", sequelize.fn("NOW"))),
       $gt: 30
     }).then(data => {
->>>>>>> origin
       console.log(data);
       res.json(data);
-    })
+    });
   });
 
   app.get("/api/account/", (req, res) => {
@@ -126,8 +115,6 @@ module.exports = app => {
       res.json(data);
     });
   });
-<<<<<<< HEAD
-=======
 };
 
 // DELETE ROUTE to specific account by id
@@ -181,4 +168,3 @@ module.exports = app => {
 //     .data("post");
 //   window.location.href = "/cms?post_id=" + currentPost.id;
 // }
->>>>>>> origin
