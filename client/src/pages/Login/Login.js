@@ -55,6 +55,7 @@ import "./Login.css";
           >
             Login
           </Button>
+          <button>Google Login</button>
         </form>
       </div>
     );

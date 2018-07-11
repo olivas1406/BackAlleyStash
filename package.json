@@ -19,9 +19,12 @@
   "homepage": "https://github.com/olivas1406/BackAlleyStash#readme",
   "dependencies": {
     "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0",
     "path": "^0.12.7",
     "sequelize": "^4.38.0"
   },
