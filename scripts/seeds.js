@@ -1,4 +1,3 @@
-
 const mysql2 = require("mysql2");
 const db = require("../models");
 mysql2.Promise = global.Promise;
@@ -14,7 +13,7 @@ mysql2.connect(
 
 db.stash
   .remove({})
-  .then(() => db.stash.collection.insertMany(stashSeed))
+  .then(() => db.stash.collection.insertMany(seeds))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
