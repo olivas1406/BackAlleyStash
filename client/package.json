@@ -1,15 +1,13 @@
 {
-  "author": "Daniel Olivas",
+  "author": "",
   "name": "client",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
   "dependencies": {
-    "ajv": "^6.5.2",
     "axios": "^0.18.0",
-    "chart.js": "^2.7.2",
     "react": "^16.4.1",
-    "react-d3-basic": "^1.6.11",
+    "react-bootstrap": "^0.32.1",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4"
@@ -18,24 +16,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && yarn install",
-    "heroku-postbuild": "npm run build"
+    "eject": "react-scripts eject"
   },
-
-"author": "",
-"license": "ISC",
-"devDependencies": {
-  "concurrently": "^3.5.0",
-  "nodemon": "^1.11.0"
-},
-"dependencies": {
-  "body-parser": "^1.18.2",
-  "express": "^4.15.4",
-  "if-env": "^1.0.4"
-}
-
+  "license": "ISC"
 }
