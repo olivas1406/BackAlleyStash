@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const API = {
+const API = {
   // Gets all transactions
   getTransactions: function() {
     return axios.get("/api/transaction");
@@ -18,3 +18,5 @@ export const API = {
     return axios.post("/api/transaction", transactionData);
   }
 };
+
+export default API;

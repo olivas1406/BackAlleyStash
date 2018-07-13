@@ -1,3 +1,4 @@
+
 const mysql2 = require("mysql2");
 const db = require("../models");
 mysql2.Promise = global.Promise;
