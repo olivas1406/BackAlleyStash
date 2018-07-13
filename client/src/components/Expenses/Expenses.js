@@ -44,7 +44,6 @@ class Expenses extends Component {
               <td>Total</td>
               <td />
               <td />
-              <td />
               {/*Add algorithm to get sum of all amount*/}
             </tr>
           </tbody>
