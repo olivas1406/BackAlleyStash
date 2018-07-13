@@ -4,6 +4,10 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
+ 
+  
+
+
   "dependencies": {
     "ajv": "^6.5.2",
     "axios": "^0.18.0",
@@ -12,18 +16,24 @@
     "react-d3-basic": "^1.6.11",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "body-parser": "^1.18.2",
+    "if-env": "^1.0.4"
   },
+{
+  "name": /*???*/,
+  "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
+
+    
     "install": "cd client && yarn install",
-    "heroku-postbuild": "npm run build"
+
+
   },
 
 "author": "",
