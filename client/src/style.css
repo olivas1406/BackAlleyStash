@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.landingTitle {
+    text-align: center;
+    font-size: 40px;
+}
+
+.signInTitle {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    margin-top: 4%;
+    padding: 2%;
+    border-radius: 5px;
+}
+
+.signInForm {
+    text-align: center;
+    padding: 1%;
+    font-size: 20px;
+}
+
+.header {
+    background-color: rgb(171, 208, 243);
+}
+
+ul {
+    list-style-type: none;
+  }
+
+.navLink {
+    float: left;
+    margin: 1% 0 1% 1%;
+    cursor: pointer; 
+}
+
+.navLink a {
+    color: black;
+    text-decoration: none;
+}
+
+.amSpecial {
+    color: black;
+}
+

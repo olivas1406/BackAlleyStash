@@ -1,19 +1,13 @@
 {
-  "author": "Daniel Olivas",
-  "name": "client",
+  "name": "firebaseauth",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001/",
- 
-  
-
-
   "dependencies": {
-    "ajv": "^6.5.2",
     "axios": "^0.18.0",
     "chart.js": "^2.7.2",
+    "firebase": "^5.2.0",
     "react": "^16.4.1",
-    "react-d3-basic": "^1.6.11",
     "react-dom": "^16.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",

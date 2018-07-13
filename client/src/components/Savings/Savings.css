@@ -1,0 +1,15 @@
+.Savings {
+    clear: both;
+    float: left;
+    width: 35%;
+    text-align: center;
+    border: solid 1px #330036;
+    margin: 2% 0 0 3%;
+}
+
+.SavingsTitle {
+    margin-left: 3%;
+    padding: 1%;
+}
+
+
