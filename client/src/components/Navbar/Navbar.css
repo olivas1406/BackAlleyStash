@@ -4,11 +4,13 @@
   }
 
 .Navbar {
-    background-color: #98C1D9;
-    padding: 1%;
+    background-color: #56666B;
+    padding: 2%;
+    line-height: .25;
 }
 
 .Links {
+    float: left;
     display: inline;
-    color: white;
+    color: #EEE1B3;
 }

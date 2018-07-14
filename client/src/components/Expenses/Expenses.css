@@ -1,15 +1,16 @@
 .Expenses {
-    width: 50%;
-    border: solid 1px #1485CC;
-    border-radius: 14px;
-    float: left;
-    margin: 2% 0 3% 6%;
+    width: 90%;
+    border: solid 1px black;
+    margin: 2% auto 0 auto;
 }
+
+
 
 .ExpenseText {
     color: #0971B2;
     margin-top: 2%;
     text-align: center;
+    font-weight: bold;
     font-size: 30px;
     font-family: 'Encode Sans Condensed', sans-serif;
 }
