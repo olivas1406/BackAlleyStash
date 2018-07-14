@@ -15,6 +15,10 @@
     padding: 1%;
 }
 
+.AssetsTable {
+    margin: 0 2% 0 2%;
+}
+
 table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
