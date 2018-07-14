@@ -24,7 +24,9 @@ const db = require("./models");
 // Require routes
 require("./routes/api/api")(app);
 
-db.sequelize.sync({ force: true }).then(function() {
+let shouldForce = process.env.NODE_ENV !== 'production';
+
+db.sequelize.sync({ force: shouldForce }).then(function() {
   app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
   });
