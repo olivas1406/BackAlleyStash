@@ -8,7 +8,8 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && yarn install",
-    "heroku-postbuild": "npm run build"
+    "build": "cd client && yarn build",
+    "heroku-postbuild": "yarn build"
   },
   "repository": {
     "type": "git",
@@ -29,7 +30,8 @@
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
     "path": "^0.12.7",
-    "sequelize": "^4.38.0"
+    "sequelize": "^4.38.0",
+    "yarn": "^1.7.0"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",

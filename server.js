@@ -10,13 +10,13 @@ const passportSetup = require('./config/passport-setup');
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 // Serve up static assets (usually on heroku)
-app.use(express.static("build"));
+// app.use(express.static("build"));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
 app.get("/", function(req, res) {
-  res.sendFile("build/index.html");
+  res.sendFile("client/build/index.html");
 });
 
 // Define routes here
