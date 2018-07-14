@@ -6,7 +6,7 @@ const Budget = () => (
     <h2 className="BudgetTitle">Budget</h2>
     <hr />
     <br />
-    <table className="Transactions">
+    <table className="StocksTable">
         <tbody>
             <tr>
               <th>Description</th>
