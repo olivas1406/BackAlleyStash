@@ -6,6 +6,7 @@ const Assets = () => (
     <h2 className="ExpenseText">Assets</h2>
     <hr />
     <br />
+
     <table className="StocksTable
         <tbody>
             <tr>
