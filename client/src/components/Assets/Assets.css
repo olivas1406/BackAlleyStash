@@ -1,14 +1,18 @@
 .Assets {
     float: left;
-    width: 55%;
+    width: 54%;
     text-align: center;
     border: solid 1px #330036;
-    margin: 2% 0 0 3%;
+    margin: 2% 0 3% 3%;
 }
 
 .AssetsTitle {
     margin-left: 3%;
     padding: 1%;
+}
+
+.AssetsTable {
+    margin: 0 2% 0 2%;
 }
 
 table {

@@ -1,10 +1,9 @@
 .Scraper {
     clear: both;
-    float: right;
     width: 90%;
     text-align: center;
     border: solid 1px #330036;
-    margin: 2% 3% 4% 0;
+    margin: 2% auto 4% auto;
 }
 
 .ScraperTitle {
