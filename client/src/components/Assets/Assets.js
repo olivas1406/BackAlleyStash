@@ -7,7 +7,7 @@ const Assets = () => (
     <hr />
     <br />
 
-    <table className="StocksTable
+    <table className="StocksTable">
         <tbody>
             <tr>
                 <th>Asset</th>
