@@ -6,7 +6,7 @@ const Scraper = () => (
     <h2 className="ExpenseText">Financial Headlines</h2>
     <hr />
     <br />
-    <table className="Scraper">
+    <table className="StocksTable">
       <tbody>
         <tr>
           <th>Headline</th>

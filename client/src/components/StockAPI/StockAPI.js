@@ -6,7 +6,7 @@ const StockAPI = () => (
     <h2 className="ExpenseText">Stocks</h2>
     <hr />
     <br />
-    <table className="Stocks">
+    <table className="StocksTable">
         <tbody>
             <tr>
                 <th>Stock</th>
