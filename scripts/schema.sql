@@ -47,7 +47,7 @@ CREATE TABLE `Transactions`
   `Amount` Decimal
 (10,2) NOT NULL,
   `Balance` Decimal
-(100,2) NOT NULL,
+(10,2) NOT NULL,
   `UserID` Int NOT NULL,
   `AccountID` Int NOT NULL,
   `AccountTypeID` Int NOT NULL,
