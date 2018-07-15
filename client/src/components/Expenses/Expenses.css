@@ -4,7 +4,21 @@
     margin: 2% auto 0 auto;
 }
 
+.EditButton {
+    float: right;
+    font-size: 14px;
+    color: red;
+    cursor: pointer;
+    
+}
 
+.DeleteButton {
+    float: right;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 2%;
+
+}
 
 .ExpenseText {
     color: #0971B2;
@@ -41,3 +55,73 @@ tr:nth-child(even) {
     background-color: #dddddd;
 }
 
+/* .notification-message {
+    background-color: red;
+    border: solid 2px yellow;
+  }
+  
+  .notification {
+    background-color: blue;
+    border: solid 2px green;
+  
+  } */
+  
+  .notification-info {
+    background-color: white;
+    border: solid 1px rgb(32, 30, 133);
+    color: black;
+    width: 15%;
+    font-size: 20px;
+    position: fixed;
+    margin-left: 60%;
+    margin-top: -5%;
+    border-radius: 6px;
+    z-index: 25;
+  
+  
+}
+
+.notification-success {
+    background-color: white;
+    border: solid 2px blue;
+    color: black;
+    width: 12%;
+    float: right;
+    margin: 0 4% 0 0;
+    border-radius: 12px;
+  
+}
+
+.notification-warning {
+    background-color: white;
+    border: solid 1px rgb(53, 29, 143);
+    color: red;
+    width: 15%;
+    font-size: 20px;
+    position: fixed;
+    margin-left: 60%;
+    margin-top: -5%;
+    border-radius: 6px;
+    z-index: 25;
+  
+}
+
+.notification-error {
+    background-color: red;
+    border: solid 2px darkgray;
+    color: white;
+    width: 12%;
+    border-radius: 12px;
+}
+  
+.title {
+ padding: 6%;
+ text-align: center;
+}
+
+.message {
+    /* color: red; */
+    padding: 4%;
+    text-align: center;
+
+}

@@ -1,8 +1,36 @@
 import React, { Component } from "react";
 import "./Expenses.css";
 import API from "../../utils/API.js";
+import {NotificationManager, NotificationContainer} from 'react-notifications';
+
 
 class Expenses extends Component {
+
+
+  createNotification = (type) => {
+
+  
+    return () => {
+      switch (type) {
+        case 'info':
+          NotificationManager.info('Updating Transaction', '', 500);
+          break;
+        case 'success':
+          NotificationManager.success('Success message');
+          break;
+        case 'warning':
+          NotificationManager.warning('Removing Transaction!', '', 500);
+          break;
+        case 'error':
+          NotificationManager.error('Error message', 'Close after 5s', 5000, () => {
+            alert('callback');
+          });
+          break;
+      }
+    };
+  };
+
+
   state = {
     transaction: []
   };
@@ -20,7 +48,9 @@ class Expenses extends Component {
   render() {
     return (
       <div className="Expenses">
-        <div className="ExpenseText">Current Budget</div>
+        <div className="ExpenseText">Current Budget
+        <NotificationContainer/>
+        </div>
         <hr />
         <br />
         <table className="Transactions">
@@ -36,7 +66,23 @@ class Expenses extends Component {
               <tr>
                 <td>{data.transactionDesc}</td>
                 <td>{data.categoryDesc}</td>
-                <td>{data.amount}</td>
+                <td>{data.amount}
+                
+                
+                {/* <div className="EditButton" onClick="this.props.deleteTransaction"> Delete</div> */}
+                
+                <button className='btn btn-success EditButton'
+          onClick={this.createNotification('warning')}>Delete
+        </button>
+                
+                
+                {/* <div className="DeleteButton" onClick="this.props.getTransactionId">Edit &nbsp;</div></td> */}
+                
+                <button className='btn btn-success DeleteButton'
+          onClick={this.createNotification('info')}>Edit &nbsp;
+        </button></td>
+                
+                
                 {/* <td>{data.balance}</td> */}
               </tr>
             ))}
