@@ -9,7 +9,6 @@
     font-size: 14px;
     color: red;
     cursor: pointer;
-    
 }
 
 .DeleteButton {
@@ -17,7 +16,6 @@
     font-size: 14px;
     cursor: pointer;
     margin-right: 2%;
-
 }
 
 .ExpenseText {
@@ -77,8 +75,6 @@ tr:nth-child(even) {
     margin-top: -5%;
     border-radius: 6px;
     z-index: 25;
-  
-  
 }
 
 .notification-success {
@@ -89,7 +85,6 @@ tr:nth-child(even) {
     float: right;
     margin: 0 4% 0 0;
     border-radius: 12px;
-  
 }
 
 .notification-warning {
@@ -103,7 +98,6 @@ tr:nth-child(even) {
     margin-top: -5%;
     border-radius: 6px;
     z-index: 25;
-  
 }
 
 .notification-error {
@@ -123,5 +117,4 @@ tr:nth-child(even) {
     /* color: red; */
     padding: 4%;
     text-align: center;
-
 }
