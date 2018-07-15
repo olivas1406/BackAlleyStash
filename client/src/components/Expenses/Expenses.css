@@ -3,6 +3,7 @@
     border: solid 1px black;
     margin: 2% auto 0 auto;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-color: rgba(212, 226, 255, 0.329);
 }
 
 .EditButton {
@@ -20,8 +21,9 @@
 }
 
 .ExpenseText {
-    color: #0971B2;
-    margin-top: 2%;
+    color: rgb(7, 7, 77);
+    /* margin-top: 2%; */
+    margin: 0 auto 0 auto;
     text-align: center;
     font-weight: bold;
     font-size: 30px;
@@ -36,6 +38,8 @@
 
 .Transactions {
     font-family: 'Quicksand', sans-serif;
+    width: 96%;
+    margin: 0 2% 0 2%;
 }
 
 table {
@@ -51,7 +55,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: white;
 }
 
 /* .notification-message {
