@@ -3,13 +3,9 @@ import "./Expenses.css";
 import API from "../../utils/API.js";
 import {NotificationManager, NotificationContainer} from 'react-notifications';
 
-
 class Expenses extends Component {
 
-
   createNotification = (type) => {
-
-  
     return () => {
       switch (type) {
         case 'info':
@@ -29,7 +25,6 @@ class Expenses extends Component {
       }
     };
   };
-
 
   state = {
     transaction: []
@@ -67,22 +62,8 @@ class Expenses extends Component {
                 <td>{data.transactionDesc}</td>
                 <td>{data.categoryDesc}</td>
                 <td>{data.amount}
-                
-                
-                {/* <div className="EditButton" onClick="this.props.deleteTransaction"> Delete</div> */}
-                
-                <button className='btn btn-success EditButton'
-          onClick={this.createNotification('warning')}>Delete
-        </button>
-                
-                
-                {/* <div className="DeleteButton" onClick="this.props.getTransactionId">Edit &nbsp;</div></td> */}
-                
-                <button className='btn btn-success DeleteButton'
-          onClick={this.createNotification('info')}>Edit &nbsp;
-        </button></td>
-                
-                
+                <button className='btn btn-success EditButton' onClick={this.createNotification('warning')}>Delete</button>
+                <button className='btn btn-success DeleteButton' onClick={this.createNotification('info')}>Edit &nbsp;</button></td>
                 {/* <td>{data.balance}</td> */}
               </tr>
             ))}
