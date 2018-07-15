@@ -30,7 +30,7 @@
 
 ul {
     list-style-type: none;
-  }
+}
 
 .navLink {
     float: left;
@@ -39,11 +39,11 @@ ul {
 }
 
 .navLink a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 .amSpecial {
-    color: black;
+    color: white;
 }
 
