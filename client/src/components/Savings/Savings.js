@@ -11,12 +11,13 @@ export default class YourStash extends Component {
                 "What You've Paid Yourself",
             ],
             datasets: [{
+                label: "$tash",
                 data: [3],
                 backgroundColor: [
-                    "#330036"
+                    "#181b7f"
                 ],
                 hoverBackgroundColor: [
-                    "#EEE1B3"
+                    "#e8ff8c"
                 ]
             }]
         };
