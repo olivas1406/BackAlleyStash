@@ -24,9 +24,9 @@
     font-size: 20px;
 }
 
-.header {
+/* .header {
     background-color: rgb(171, 208, 243);
-}
+} */
 
 ul {
     list-style-type: none;
@@ -39,11 +39,11 @@ ul {
 }
 
 .navLink a {
-    color: white;
+    color: rgb(1, 2, 71);
     text-decoration: none;
 }
 
 .amSpecial {
-    color: white;
+    color: rgb(1, 2, 71);
 }
 
