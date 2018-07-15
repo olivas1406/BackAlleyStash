@@ -21,7 +21,7 @@ const StockAPI = () => (
                 <td>$205.91</td>
             </tr>
             <tr>
-                <td>Thor Industries></td>
+                <td>Thor Industries</td>
                 <td>NYSE: THO</td>
                 <td>+0.29</td>
                 <td>$99.97</td>
