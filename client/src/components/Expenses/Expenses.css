@@ -2,6 +2,7 @@
     width: 90%;
     border: solid 1px black;
     margin: 2% auto 0 auto;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .EditButton {
