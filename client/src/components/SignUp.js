@@ -9,8 +9,10 @@ const SignUpPage = ({ history }) =>
       <h1 className="jumboText">Back Alley Stash</h1> 
       <p className="jumboSmall">The Importance of Paying Yourself</p>
     </div>
+    <div className="accountInfo">
     <h1 className="signInTitle">Sign Up</h1>
     <SignUpForm history={history} />
+  </div>
   </div>
 
 const INITIAL_STATE = {
@@ -87,24 +89,28 @@ class SignUpForm extends Component {
           type="text"
           placeholder="Full Name"
         />
+        <br />
         <input
           value={email}
           onChange={event => this.setState(byPropKey('email', event.target.value))}
           type="text"
           placeholder="Email Address"
         />
+        <br />
         <input
           value={passwordOne}
           onChange={event => this.setState(byPropKey('passwordOne', event.target.value))}
           type="password"
           placeholder="Password"
         />
+        <br />
         <input
           value={passwordTwo}
           onChange={event => this.setState(byPropKey('passwordTwo', event.target.value))}
           type="password"
           placeholder="Confirm Password"
         />
+        <br />
         <button disabled={isInvalid} type="submit">
           Sign Up
         </button>

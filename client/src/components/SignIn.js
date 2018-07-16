@@ -12,11 +12,13 @@ const SignInPage = ({ history }) =>
       <h1 className="jumboText">Back Alley Stash</h1> 
       <p className="jumboSmall">The Importance of Paying Yourself</p>
     </div>
+    <div className="accountInfo">
     <h1 className="signInTitle">Sign In</h1>
     <div className="signInForm">
     <SignInForm history={history} />
     <PasswordForgetLink />
     <SignUpLink />
+    </div>
     </div>
   </div>
 
