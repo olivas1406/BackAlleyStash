@@ -2,7 +2,6 @@ import React from 'react';
 import "../style.css";
 
 import AuthUserContext from './AuthUserContext';
-import { PasswordForgetForm } from './PasswordForget';
 import PasswordChangeForm from './PasswordChange';
 import withAuthorization from './withAuthorization';
 
