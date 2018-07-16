@@ -50,7 +50,7 @@ class Expenses extends Component {
         <br />
         <table className="Transactions">
           <tbody>
-            <tr>
+            <tr className="expenseTable">
               <th>Description</th>
               <th>Category</th>
               <th>Amount</th>
