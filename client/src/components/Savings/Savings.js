@@ -14,10 +14,10 @@ export default class YourStash extends Component {
                 label: "$tash",
                 data: [3],
                 backgroundColor: [
-                    "#181b7f"
+                    "rgba(54, 162, 235, 0.4)"
                 ],
                 hoverBackgroundColor: [
-                    "#e8ff8c"
+                    "rgba(255, 205, 86, 0.2)"
                 ]
             }]
         };

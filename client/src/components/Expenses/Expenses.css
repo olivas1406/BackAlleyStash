@@ -77,7 +77,7 @@ tr:nth-child(even) {
     font-size: 20px;
     position: fixed;
     margin-left: 60%;
-    margin-top: -5%;
+    /* margin-top: -5%; */
     border-radius: 6px;
     z-index: 25;
 }
@@ -100,7 +100,7 @@ tr:nth-child(even) {
     font-size: 20px;
     position: fixed;
     margin-left: 60%;
-    margin-top: -5%;
+    margin-top: -1%;
     border-radius: 6px;
     z-index: 25;
 }
