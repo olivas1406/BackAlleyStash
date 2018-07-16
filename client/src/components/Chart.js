@@ -1,5 +1,5 @@
 import React from "react";
-import "./Chart.css";
+import "../style.css";
 
 const Chart = props => (
     <div className="header">{props.children}

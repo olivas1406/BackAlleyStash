@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Chart from "chart.js";
-import "./Savings.css";
+import "../style.css";
 
 export default class YourStash extends Component {
     componentDidMount() {

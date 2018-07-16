@@ -3,6 +3,12 @@
     padding: 0;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
 .landingTitle {
     text-align: center;
     font-size: 40px;
@@ -24,10 +30,6 @@
     font-size: 20px;
 }
 
-/* .header {
-    background-color: rgb(171, 208, 243);
-} */
-
 ul {
     list-style-type: none;
 }
@@ -46,4 +48,338 @@ ul {
 .amSpecial {
     color: rgb(1, 2, 71);
 }
+
+.Assets {
+    float: left;
+    width: 54%;
+    text-align: center;
+    border: solid 1px #330036;
+    margin: 2% 4% 2% 3%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-color: rgba(212, 226, 255, 0.329);
+}
+
+.AssetsTable {
+    margin: 0 2% 0 2%;
+}
+
+.AssetsTitle {
+    margin-left: 3%;
+    padding: 1%;
+}
+
+.AssetsTable {
+    margin: 0 2% 0 2%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#CategoryChart {
+    max-width: 30%;
+    height: 30%;
+    float: right;
+    margin: 2% 4% 0 0;
+    border: solid 1px #1485CC;
+    border-radius: 14px;
+    padding: 0 3% 3% 3%;
+}
+
+.chart {
+    margin-right: 3%;
+}
+
+.Expenses {
+    width: 90%;
+    border: solid 1px black;
+    margin: 2% auto 0 auto;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-color: rgba(212, 226, 255, 0.329);
+}
+
+.EditButton {
+    float: right;
+    font-size: 14px;
+    color: red;
+    cursor: pointer;
+}
+
+.DeleteButton {
+    float: right;
+    font-size: 14px;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+.ExpenseText {
+    color: rgb(7, 7, 77);
+    margin: 0 auto 0 auto;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+.TransactionsTitle {
+    margin: -3% 0 0 2%;
+    color: #0971B2;
+    font-family: 'Encode Sans Condensed', sans-serif;
+}
+
+.Transactions {
+    font-family: 'Quicksand', sans-serif;
+    width: 96%;
+    margin: 0 2% 0 2%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+/* .notification-message {
+    background-color: red;
+    border: solid 2px yellow;
+  }
+  
+  .notification {
+    background-color: blue;
+    border: solid 2px green;
+  
+  } */
+  
+.notification-info {
+    background-color: white;
+    border: solid 1px rgb(32, 30, 133);
+    color: black;
+    width: 15%;
+    font-size: 20px;
+    position: fixed;
+    margin-left: 60%;
+    /* margin-top: -5%; */
+    border-radius: 6px;
+    z-index: 25;
+}
+
+.notification-success {
+    background-color: white;
+    border: solid 2px blue;
+    color: black;
+    width: 12%;
+    float: right;
+    margin: 0 4% 0 0;
+    border-radius: 12px;
+}
+
+.notification-warning {
+    background-color: white;
+    border: solid 1px rgb(53, 29, 143);
+    color: red;
+    width: 15%;
+    font-size: 20px;
+    position: fixed;
+    margin-left: 60%;
+    margin-top: -1%;
+    border-radius: 6px;
+    z-index: 25;
+}
+
+.notification-error {
+    background-color: red;
+    border: solid 2px darkgray;
+    color: white;
+    width: 12%;
+    border-radius: 12px;
+}
+  
+.title {
+ padding: 6%;
+ text-align: center;
+}
+
+.message {
+    /* color: red; */
+    padding: 4%;
+    text-align: center;
+}
+
+.jumbotron {
+    clear: both;
+    text-align: center;
+    background: url("./bg.png");
+}
+
+.jumboText {
+    padding: 2%;
+    color: white;
+    background-color: rgb(7, 7, 77);
+    width: 38%;
+    font-size: 50px;
+    font-family: 'IM Fell English SC', serif;
+    font-weight: bold;
+    margin: 0 auto 0 auto;
+    border-radius: 4px;
+}
+
+.jumboSmall {
+    font-size: 24px;
+    padding: 1%;
+    color: rgb(7, 7, 77);
+    background-color: white;
+    display: inline-block;
+    vertical-align: middle;
+    border-bottom: solid 1px;
+    margin: 0 auto 0 auto;
+    border-radius: 4px;
+    width: 28%;
+    font-family: 'Playfair Display', serif;
+}
+
+.Navbar {
+    background-color: #56666B;
+    padding: 2%;
+    line-height: .25;
+}
+
+.OldTransactions {
+    clear: both;
+    margin: auto;
+    text-align: center;
+    height: 100px;
+    border: solid 1px #1485CC;
+    width: 40%;
+}
+
+.Savings {
+    clear: both;
+    float: left;
+    width: 33%;
+    text-align: center;
+    border: solid 1px #330036;
+    margin: 2% 0 0 5%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-color: rgba(212, 226, 255, 0.329);
+}
+
+.SavingsTitle {
+    margin-left: 3%;
+    padding: 1%;
+}
+
+.Scraper {
+    clear: both;
+    width: 90%;
+    text-align: center;
+    border: solid 1px #330036;
+    margin: 2% auto 4% auto;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-color: rgba(212, 226, 255, 0.329);
+}
+
+.ScraperTitle {
+    margin-left: 3%;
+    padding: 1%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+#Stash {
+    border: solid 1px #1485CC;
+    border-radius: 14px;
+    width: 80%;
+    height: 60%;
+    display: block;
+    margin: 1% auto 1% auto;
+}
+
+.Stocks {
+    clear: both;
+    width: 90%;
+    text-align: center;
+    border: solid 1px #330036;
+    margin: 2% auto 1% auto;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-color: rgba(212, 226, 255, 0.329);
+}
+
+.StocksTitle {
+    margin-left: 3%;
+    padding: 1%;
+}
+
+.StocksTable {
+    margin: 0 auto 0 auto;
+    width: 95%;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+
 

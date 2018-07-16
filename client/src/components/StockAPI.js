@@ -1,5 +1,5 @@
 import React from "react";
-import "./StockAPI.css";
+import "../style.css";
 
 const StockAPI = () => (
   <div className="Stocks">

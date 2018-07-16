@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import withAuthorization from './withAuthorization';
 import { db } from '../firebase';
-import Header from "./Header";
-import Savings from "./Savings";
-import Assets from "./Assets";
-import StockAPI from "./StockAPI";
-import Scraper from "./Scraper";
-import Expenses from './Expenses';
+import Header from "./Header.js";
+import Savings from "./Savings.js";
+import Assets from "./Assets.js";
+import StockAPI from "./StockAPI.js";
+import Scraper from "./Scraper.js";
+import Expenses from './Expenses.js';
 
 class HomePage extends Component {
   constructor(props) {
