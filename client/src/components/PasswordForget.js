@@ -8,8 +8,10 @@ const PasswordForgetPage = () =>
         <h1 className="jumboText">Back Alley Stash</h1> 
         <p className="jumboSmall">The Importance of Paying Yourself</p>
       </div>
+      <div className="accountInfo">
     <h1 className="signInTitle">Password Reset</h1>
     <PasswordForgetForm />
+  </div>
   </div>
 
 const byPropKey = (propertyName, value) => () => ({
