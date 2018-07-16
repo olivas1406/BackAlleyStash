@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import "./Expenses.css";
-import API from "../../utils/API.js";
+import "../style.css";
+import API from "../utils/API.js";
 import {NotificationManager, NotificationContainer} from 'react-notifications';
 
 class Expenses extends Component {

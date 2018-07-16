@@ -1,5 +1,5 @@
 import React from "react";
-import "./OldTransactions.css";
+import "../style.css";
 
 const OldTransactions = props => (
     <div className="OldTransactions">{props.children}

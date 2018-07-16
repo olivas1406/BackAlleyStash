@@ -1,5 +1,5 @@
 import React from "react";
-import "./Scraper.css";
+import "../style.css";
 
 const Scraper = () => (
   <div className="Scraper">

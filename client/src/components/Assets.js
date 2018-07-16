@@ -1,5 +1,5 @@
 import React from "react";
-import "./Assets.css";
+import "../style.css";
 
 const Assets = () => (
   <div className="Assets">
