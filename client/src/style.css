@@ -7,11 +7,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-  }
+}
 
-.landingTitle {
+.accountInfo {
     text-align: center;
-    font-size: 40px;
+    width: 40%;
+    border: solid 1px #330036;
+    margin: 2% auto 0 auto;
+    padding-bottom: 10%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    background-color: rgba(212, 226, 255, 0.329);
+}
+
+.pwChange {
+    background-color: rgb(7, 7, 77);
+    color: white;
+    width: 40%;
+    margin: 4% auto 4% auto;
+    padding: 2%;
+
 }
 
 .signInTitle {
