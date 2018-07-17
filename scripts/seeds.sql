@@ -33,7 +33,7 @@ VALUES
     ('Outgoing Transfers', NOW(), NOW()),
     ('Shopping', NOW(), NOW()),
     ('Travel', NOW(), NOW()),
-    ('Emergency Expense', NOW(), NOW()),
+    ('Emergency Expense', NOW(), NOW());
     -- ('Uncategorized Payments', NOW(), NOW());  'Uncategorized' categorizes it. - DLO
 
 INSERT INTO account
