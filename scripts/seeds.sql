@@ -47,7 +47,9 @@ VALUES
     (2, 'Checking', 'Verizon Wireless', 'Utilities', 220, 0, NOW(), NOW(), 1),
     (2, 'Checking', 'Cox Communication', 'Utilities', 120, 0, NOW(), NOW(), 1),
     (2, 'Checking', 'Breakfast w/ Bon @ IHOP', 'Food/Drink', 25, 0, NOW(), NOW(), 1),
-    (1, 'Checking', 'Emergency Room (Food Poisoning)', 'Emergency Expense', 400, 0, NOW(), NOW(), 1);
+    (1, 'Checking', 'Emergency Room (Food Poisoning)', 'Emergency Expense', 400, 0, NOW(), NOW(), 1),
+    -- (2, 'Checking', 'Rx', 'Health', 12, 0, NOW(), NOW(), 1),
+    -- (1, 'Checking', 'Underwear', 'Emergency Expense', 10, 0, NOW(), NOW(), 1);
 
 INSERT INTO transaction
     (transactionID, transactiondesc, categorydesc, amount, balance, createdAT, UpdatedAT, accountTypeID, CategoryID, UserID, usersID)
@@ -59,6 +61,7 @@ VALUES
     (5, 'Verizon Wireless', 'Utilities', 220, 0, NOW(), NOW(), 1, 12, 2, 2),
     (6, 'Cox Communication', 'Utilities', 120, 0, NOW(), NOW(), 1, 12, 2, 2),
     (7, 'Breakfast w/ Bon @ IHOP', 'Food/Drink', 25, 0, NOW(), NOW(), 1, 12, 2, 2),
-    (8, 'Emergency Room (Food Poisoning)', 'Emergency Expense', 400, 0, NOW(), NOW(), 1, 5, 1, 1);
-
+    (8, 'Emergency Room (Food Poisoning)', 'Emergency Expense', 400, 0, NOW(), NOW(), 1, 5, 1, 1),
+    -- (9, 'Rx', 'Health', 12, 0, NOW(), NOW(), 1, 12, 2, 2),
+    -- (10, 'Underwear', 'Emergency Expense', 10, 0, NOW(), NOW(), 1, 5, 1, 1);
 

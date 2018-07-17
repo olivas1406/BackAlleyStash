@@ -50,7 +50,8 @@ class Expenses extends Component {
         <br />
         <table className="Transactions">
           <tbody>
-            <tr className="expenseTable">
+            <tr className="AmSpecialTable">
+              {/* <th>Transaction #</th> */}
               <th>Description</th>
               <th>Category</th>
               <th>Amount</th>
@@ -59,9 +60,10 @@ class Expenses extends Component {
             make a new td for each data */}
             {this.state.transaction.map(data => (
               <tr>
+                {/* <td>{data.transactionId}</td> */}
                 <td>{data.transactionDesc}</td>
                 <td>{data.categoryDesc}</td>
-                <td>{data.amount}
+                <td>- ${data.amount}
                 <button className='btn btn-success EditButton' onClick={this.createNotification('warning')}>Delete</button>
                 <button className='btn btn-success DeleteButton' onClick={this.createNotification('info')}>Edit &nbsp;</button></td>
                 {/* <td>{data.balance}</td> */}
@@ -69,8 +71,10 @@ class Expenses extends Component {
             ))}
             <tr>
               <td className="expenseTotal">Total</td>
+              {/* <td /> */}
               <td />
-              <td />
+              <td>$2357.55</td>
+              
               {/*Add algorithm to get sum of all amount*/}
             </tr>
           </tbody>

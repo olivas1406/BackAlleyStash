@@ -73,39 +73,16 @@ ul {
     background-color: rgba(212, 226, 255, 0.329);
 }
 
-.AssetsTable {
-    margin: 0 2% 0 2%;
-}
-
 .AssetsTitle {
     margin-left: 3%;
     padding: 1%;
 }
 
-.AssetsTable {
-    margin: 0 2% 0 2%;
-}
-
 table {
     font-family: arial, sans-serif;
+    margin: 0 auto 2% auto;
+    width: 95%;
     border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
 }
 
 td, th {
@@ -172,23 +149,6 @@ tr:nth-child(even) {
 .Transactions {
     font-family: 'Quicksand', sans-serif;
     width: 96%;
-    margin: 0 2% 0 2%;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: white;
 }
 
 /* .notification-message {
@@ -335,21 +295,6 @@ tr:nth-child(even) {
     padding: 1%;
 }
 
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
-
 #Stash {
     border: solid 1px #1485CC;
     border-radius: 14px;
@@ -374,25 +319,6 @@ tr:nth-child(even) {
     padding: 1%;
 }
 
-.StocksTable {
-    margin: 0 auto 0 auto;
-    width: 95%;
-}
-
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-}
-
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #dddddd;
-}
 
 
 
