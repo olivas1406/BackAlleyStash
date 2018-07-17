@@ -69,6 +69,7 @@ class Expenses extends Component {
                 {/* <td>{data.balance}</td> */}
               </tr>
             ))}
+            <button className="addTrans">Add Transaction</button>
             <tr>
               <td className="expenseTotal">Total</td>
               {/* <td /> */}
