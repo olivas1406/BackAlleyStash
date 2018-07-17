@@ -48,6 +48,6 @@ const StockAPI = () => (
     </table>
     <br />
   </div>
-);
+);                       
 
 export default StockAPI;

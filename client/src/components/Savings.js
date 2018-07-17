@@ -12,7 +12,7 @@ export default class YourStash extends Component {
             ],
             datasets: [{
                 label: "$tash",
-                data: [3],
+                data: [300],
                 backgroundColor: [
                     "rgba(54, 162, 235, 0.4)"
                 ],
