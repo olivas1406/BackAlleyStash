@@ -44,17 +44,17 @@ class Expenses extends Component {
     console.log("component mounted");
     API.getTransactions()
       .then(res => {
-        console.log(res);
         this.setState({
           transaction: res.data
+        });
+        res.data.forEach(result => {
+          let joined = this.state.amount.concat(result.amount);
+          this.setState({ amount: joined });
+          console.log(result.amount);
         });
         console.log(this.state);
       })
       .catch(err => console.log(err));
-
-    API.getTransactionsAmount().then(res => {
-      console.log(res);
-    });
   }
 
   render() {
@@ -103,11 +103,9 @@ class Expenses extends Component {
             {/* <button className="addTrans">Add Transaction</button> */}
             <tr>
               <td className="expenseTotal">Total</td>
-              {/* <td /> */}
+              {/* Use this code to add all the amount */}
+              <td>{this.state.amount.reduce()}</td>
               <td />
-              <td>$2357.55</td>
-
-              {/*Add algorithm to get sum of all amount*/}
             </tr>
           </tbody>
         </table>
