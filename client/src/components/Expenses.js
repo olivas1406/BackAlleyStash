@@ -103,9 +103,14 @@ class Expenses extends Component {
             {/* <button className="addTrans">Add Transaction</button> */}
             <tr>
               <td className="expenseTotal">Total</td>
-              {/* Use this code to add all the amount */}
-              <td>{this.state.amount.reduce()}</td>
               <td />
+              {/* Use this code to add all the amount */}
+              <td>
+                {this.state.amount.reduce(
+                  (accumulator, currentValue) => accumulator + currentValue,
+                  0
+                )}
+              </td>
             </tr>
           </tbody>
         </table>
