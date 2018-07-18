@@ -6,6 +6,7 @@ import {
   NotificationContainer
 } from "react-notifications";
 import Form from "./Form.js";
+import { timingSafeEqual } from "crypto";
 
 class Expenses extends Component {
   createNotification = type => {
@@ -36,18 +37,24 @@ class Expenses extends Component {
 
   state = {
     transaction: [],
-    total: []
+    amount: []
   };
   // When this component mounts, should grab all transactions
   componentDidMount() {
     console.log("component mounted");
     API.getTransactions()
       .then(res => {
-        this.setState({ transaction: res.data });
-        this.setState({ total: res.data.amount });
-        console.log(this.state.transaction);
+        console.log(res);
+        this.setState({
+          transaction: res.data
+        });
+        console.log(this.state);
       })
       .catch(err => console.log(err));
+
+    API.getTransactionsAmount().then(res => {
+      console.log(res);
+    });
   }
 
   render() {
@@ -65,7 +72,6 @@ class Expenses extends Component {
               <Form />{" "}
             </tr>
             <tr className="AmSpecialTable">
-              {/* <th>Transaction #</th> */}
               <th>Description</th>
               <th>Category</th>
               <th>Amount</th>
@@ -74,10 +80,9 @@ class Expenses extends Component {
             make a new td for each data */}
             {this.state.transaction.map(data => (
               <tr>
-                {/* <td>{data.transactionId}</td> */}
                 <td>{data.transactionDesc}</td>
                 <td>{data.categoryDesc}</td>
-                <td>
+                <td className="amount">
                   - ${data.amount}
                   <button
                     className="btn btn-success EditButton"

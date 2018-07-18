@@ -44,8 +44,12 @@ class Form extends Component {
           name="categoryDesc"
           placeholder="Required"
         >
-          <option>Recurring Expense</option>
+          <option>Miscellaneous</option>
           <option>Mortgage</option>
+          <option>Utilities</option>
+          <option>Transportation</option>
+          <option>Personal</option>
+          <option>Credit Card</option>
         </select>
         Amount:{" "}
         <input
@@ -55,11 +59,10 @@ class Form extends Component {
           placeholder="Required"
         />
         <button
-          type="button"
-          className=""
+          type="Submit"
           form="form1"
           value="Submit"
-          onChange={this.handleSubmit}
+          onClick={this.handleSubmit}
         >
           Add Transaction
         </button>
