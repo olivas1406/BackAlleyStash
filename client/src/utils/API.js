@@ -7,7 +7,7 @@ const API = {
   },
   // Gets the transaction with the given id
   getTransactionsAmount: function() {
-    return axios.get("/api/transaction/:amt");
+    return axios.get("/api/transaction/amt");
   },
   // Deletes the transaction with the given id
   deleteTransaction: function(id) {
