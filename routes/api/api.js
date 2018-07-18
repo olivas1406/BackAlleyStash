@@ -13,6 +13,24 @@ module.exports = app => {
     });
   });
 
+  //get route for the last api/transaction/amount entered
+  app.get("/api/transaction/:amt", (req, res) => {
+    db.Transaction.findall({ where: { [Op.all]: [{ amount }] } }).then(
+      datamath => {
+        console.log(datamath);
+        res.json(datamath);
+      }
+    );
+  });
+
+  //get route for the initial balance of of transaction
+  app.get("/api/transaction/:bln", (req, res) => {
+    db.Transaction.find({ where: { transactionID: 1 } }).then(databalance => {
+      console.log(databalance);
+      res.json(databalance);
+    });
+  });
+
   // Post route to /api/transaction\
   app.post("/api/transaction", (req, res) => {
     db.Transaction.create(req.body).then(data => {
@@ -117,7 +135,6 @@ module.exports = app => {
   });
 };
 
-// DELETE ROUTE to specific account by id
 // app.delete("/api/account/:id", (req, res) => {
 //   db.Account.destroy({
 //     where: {
