@@ -319,6 +319,10 @@ tr:nth-child(even) {
     padding: 1%;
 }
 
+.stockLink {
+    text-align: center;
+}
+
 .addTrans {
     margin: 1%;
     padding: 1%;
