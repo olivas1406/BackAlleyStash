@@ -10,8 +10,8 @@ const Assets = () => (
     <table className="StocksTable">
         <tbody>
             <tr>
-                <th>Asset</th>
-                <th>Current Value</th>
+                <th className="stockLink">Asset</th>
+                <th className="stockLink">Current Value</th>
             </tr>
             <tr>
           <td>Home Equity</td>
