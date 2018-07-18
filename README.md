@@ -12,7 +12,7 @@ Back Alley Stash
 
 <br>
 
-![Back Alley Stash Screen Cap](./stash1.png)
+![Back Alley Stash Screen Cap](./stash.png)
 <br><br>
 
 ---
