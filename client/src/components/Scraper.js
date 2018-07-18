@@ -38,9 +38,9 @@ class Scraper extends Component {
           <table className="StocksTable">
             <tbody>
               <tr>
-                <th>Headline</th>
-                <th>Summary</th>
-                <th>Link to Article</th>
+                <th className="stockLink">Headline</th>
+                <th className="stockLink">Summary</th>
+                <th className="stockLink">Link</th>
               </tr>
               {this.state.scraper}
             </tbody>
