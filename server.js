@@ -32,7 +32,3 @@ db.sequelize.sync({ force: shouldForce }).then(function() {
   });
 });
 
-// checkout concurrently to install into package.json to connect front and back servers 
-// app.listen(PORT, function() {
-//   console.log("App listening on PORT " + PORT);
-// });
