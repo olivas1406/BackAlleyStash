@@ -9,10 +9,10 @@ const StockAPI = () => (
     <table className="StocksTable">
         <tbody>
             <tr>
-                <th>Stock</th>
-                <th>Ticker Symbol</th>
-                <th>Change</th>
-                <th>Value</th>
+                <th className="stockLink">Stock</th>
+                <th className="stockLink">Ticker Symbol</th>
+                <th className="stockLink">Change</th>
+                <th className="stockLink">Value</th>
             </tr>
             <tr>
                 <td>Mastercard Inc</td>

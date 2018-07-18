@@ -72,9 +72,9 @@ class Expenses extends Component {
               <Form />{" "}
             </tr>
             <tr className="AmSpecialTable">
-              <th>Description</th>
-              <th>Category</th>
-              <th>Amount</th>
+              <th className="stockLink">Description</th>
+              <th className="stockLink">Category</th>
+              <th className="stockLink">Amount</th>
             </tr>
             {/* Loop through data from this.state.transaction
             make a new td for each data */}
