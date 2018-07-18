@@ -314,6 +314,11 @@ tr:nth-child(even) {
     background-color: rgba(212, 226, 255, 0.329);
 }
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
 .StocksTitle {
     margin-left: 3%;
     padding: 1%;
