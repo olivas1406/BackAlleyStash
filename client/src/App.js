@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Navigation from './components/Navigation';
@@ -9,6 +11,7 @@ import AccountPage from './components/Account';
 import * as routes from './constants/routes';
 import withAuthentication from './components/withAuthentication';
 import "./style.css";
+
 
 const App = () =>
   <Router>
