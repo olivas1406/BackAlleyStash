@@ -35,7 +35,12 @@ module.exports = app => {
 
   // Post route to /api/transaction\
   app.post("/api/transaction", (req, res) => {
-    db.Transaction.create(req.body).then(data => {
+    db.Transaction.upsert({
+      transactionDesc: req.body.transactionDesc,
+      categoryDesc: req.body.categoryDesc,
+      amount: req.body.amount,
+      balance: req.body.balance
+    }).then(data => {
       res.json(data);
     });
   });
