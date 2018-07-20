@@ -56,14 +56,14 @@ class Form extends Component {
           <option>Personal</option>
           <option>Credit Card</option>
         </select>
-        Amount Spent:{" "}
+        Money Spent:{" "}
         <input
           value={this.state.amount}
           onChange={this.handleInput}
           name="amount"
           placeholder="Required"
         />
-        Amount Earned:{" "}
+        Money Earned:{" "}
         <input
           value={this.state.balance}
           onChange={this.handleInput}
