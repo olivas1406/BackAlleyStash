@@ -6,7 +6,8 @@ class Form extends Component {
   state = {
     transactionDesc: "",
     categoryDesc: "",
-    amount: ""
+    amount: "",
+    balance: ""
   };
 
   handleInput = event => {
@@ -18,11 +19,15 @@ class Form extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    if (this.state.description && this.state.category && this.state.amount) {
+    if (
+      (this.state.description && this.state.category && this.state.amount,
+      this.state.balance)
+    ) {
       API.saveTransaction({
         transactionDesc: this.state.transactionDesc,
         categoryDesc: this.state.categoryDesc,
-        amount: this.state.amount
+        amount: this.state.amount,
+        balance: this.state.balance
       });
     }
   };
@@ -51,11 +56,18 @@ class Form extends Component {
           <option>Personal</option>
           <option>Credit Card</option>
         </select>
-        Amount:{" "}
+        Amount Spent:{" "}
         <input
           value={this.state.amount}
           onChange={this.handleInput}
           name="amount"
+          placeholder="Required"
+        />
+        Amount Earned:{" "}
+        <input
+          value={this.state.balance}
+          onChange={this.handleInput}
+          name="balance"
           placeholder="Required"
         />
         <button
