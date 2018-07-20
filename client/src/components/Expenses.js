@@ -39,9 +39,10 @@ class Expenses extends Component {
     transaction: [],
     amount: []
   };
+
   // When this component mounts, should grab all transactions
   componentDidMount() {
-    console.log("component mounted");
+    // console.log("component mounted");
     API.getTransactions()
       .then(res => {
         this.setState({
@@ -50,7 +51,7 @@ class Expenses extends Component {
         res.data.forEach(result => {
           let joined = this.state.amount.concat(result.amount);
           this.setState({ amount: joined });
-          console.log(result.amount);
+          // console.log(result.amount);
         });
         console.log(this.state);
       })
@@ -75,6 +76,7 @@ class Expenses extends Component {
               <th className="stockLink">Description</th>
               <th className="stockLink">Category</th>
               <th className="stockLink">Amount</th>
+              <th className="stockLink">Balance</th>
             </tr>
             {/* Loop through data from this.state.transaction
             make a new td for each data */}
@@ -83,7 +85,7 @@ class Expenses extends Component {
                 <td>{data.transactionDesc}</td>
                 <td>{data.categoryDesc}</td>
                 <td className="amount">
-                  - ${data.amount}
+                  ${data.amount}
                   <button
                     className="btn btn-success EditButton"
                     onClick={this.createNotification("warning")}
@@ -97,7 +99,7 @@ class Expenses extends Component {
                     Edit &nbsp;
                   </button>
                 </td>
-                {/* <td>{data.balance}</td> */}
+                <td />
               </tr>
             ))}
             {/* <button className="addTrans">Add Transaction</button> */}
@@ -111,6 +113,7 @@ class Expenses extends Component {
                   0
                 )}
               </td>
+              <td />
             </tr>
           </tbody>
         </table>
