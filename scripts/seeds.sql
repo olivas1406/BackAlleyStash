@@ -34,7 +34,7 @@ VALUES
     ('Shopping', NOW(), NOW()),
     ('Travel', NOW(), NOW()),
     ('Emergency Expense', NOW(), NOW());
-    -- ('Uncategorized Payments', NOW(), NOW());  'Uncategorized' categorizes it. - DLO
+-- ('Uncategorized Payments', NOW(), NOW());  'Uncategorized' categorizes it. - DLO
 
 INSERT INTO account
     (UserID, accountTypeDesc, transactionDesc, CategoryDesc, Amount, Balance, CreatedAT, UpdatedAt,
@@ -51,17 +51,4 @@ VALUES
     -- (2, 'Checking', 'Rx', 'Health', 12, 0, NOW(), NOW(), 1),
     -- (1, 'Checking', 'Underwear', 'Emergency Expense', 10, 0, NOW(), NOW(), 1);
 
-INSERT INTO transaction
-    (transactionID, transactiondesc, categorydesc, amount, balance, createdAT, UpdatedAT, accountTypeID, CategoryID, UserID, usersID)
-VALUES
-    (1, 'Mortgage Payment', 'Home', 1200, 160000, NOW(), NOW(), 1, 12, 2, 2),
-    (2, 'Salt River Project', 'Utilities', 350, 0, NOW(), NOW(), 1, 12, 2, 2),
-    (3, 'City of Phoenix', 'Utilities', 80, 0, NOW(), NOW(), 1, 12, 2, 2),
-    (4, 'Wells Fargo AutoLoan', 'Credit Card/Loan Payments', 300, 10000, NOW(), NOW(), 1, 5, 1, 1),
-    (5, 'Verizon Wireless', 'Utilities', 220, 0, NOW(), NOW(), 1, 12, 2, 2),
-    (6, 'Cox Communication', 'Utilities', 120, 0, NOW(), NOW(), 1, 12, 2, 2),
-    (7, 'Breakfast w/ Bon @ IHOP', 'Food/Drink', 25, 0, NOW(), NOW(), 1, 12, 2, 2),
-    (8, 'Emergency Room (Food Poisoning)', 'Emergency Expense', 400, 0, NOW(), NOW(), 1, 5, 1, 1);
-    -- (9, 'Rx', 'Health', 12, 0, NOW(), NOW(), 1, 12, 2, 2),
-    -- (10, 'Underwear', 'Emergency Expense', 10, 0, NOW(), NOW(), 1, 5, 1, 1);
 

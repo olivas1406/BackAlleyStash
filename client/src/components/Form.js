@@ -49,6 +49,7 @@ class Form extends Component {
           name="categoryDesc"
           placeholder="Required"
         >
+          <option>Required</option>
           <option>Miscellaneous</option>
           <option>Mortgage</option>
           <option>Utilities</option>

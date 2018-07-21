@@ -35,13 +35,13 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "accountTypeId",
       target: "accountTypeDesc"
     });
-    Account.hasMany(models.Transaction, {
-      foreignKey: "transactionId",
-      source: "amount",
-      source: "balance",
-      source: "categoryDesc",
-      source: "transactionDesc"
-    });
+    // Account.hasMany(models.Transaction, {
+    //   foreignKey: "transactionId",
+    //   source: "amount",
+    //   source: "balance",
+    //   source: "categoryDesc",
+    //   source: "transactionDesc"
+    // });
   };
   return Account;
 };

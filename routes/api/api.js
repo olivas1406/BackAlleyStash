@@ -13,26 +13,6 @@ module.exports = app => {
     });
   });
 
-  //get route for the last api/transaction/amount entered
-  app.get("/api/transaction/amt", (req, res) => {
-    db.Transaction.findAll({ where: { [Op.all]: [{ amount }] } }).then(
-      datamath => {
-        console.log(datamath);
-        res.json(datamath);
-      }
-    );
-  });
-
-  //get route for the initial balance of of transaction
-  app.get("/api/transaction/bln", (req, res) => {
-    db.Transaction.findOne({ where: { transactionID: 1 } }).then(
-      databalance => {
-        console.log(databalance);
-        res.json(databalance);
-      }
-    );
-  });
-
   // Post route to /api/transaction\
   app.post("/api/transaction", (req, res) => {
     db.Transaction.upsert({
