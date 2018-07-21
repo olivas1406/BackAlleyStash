@@ -34,13 +34,15 @@ class Form extends Component {
 
   render() {
     return (
-      <form id="form1">
+      <form id="form1" className="ExpenseForm">
         Description:{" "}
         <input
           value={this.state.transactionDesc}
           onChange={this.handleInput}
           name="transactionDesc"
           placeholder="Required"
+          className="formJS"
+          required
         />
         Category:{" "}
         <select
@@ -48,6 +50,7 @@ class Form extends Component {
           onChange={this.handleInput}
           name="categoryDesc"
           placeholder="Required"
+          className="formJS"
         >
           <option>Miscellaneous</option>
           <option>Mortgage</option>
@@ -62,6 +65,8 @@ class Form extends Component {
           onChange={this.handleInput}
           name="amount"
           placeholder="Required"
+          className="formJS"
+          required
         />
         Money Earned:{" "}
         <input
@@ -78,7 +83,10 @@ class Form extends Component {
         >
           Add Transaction
         </button>
+        <hr />
+        <br />
       </form>
+
     );
   }
 }
