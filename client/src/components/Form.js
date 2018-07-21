@@ -52,6 +52,7 @@ class Form extends Component {
           placeholder="Required"
           className="formJS"
         >
+          <option>Required</option>
           <option>Miscellaneous</option>
           <option>Mortgage</option>
           <option>Utilities</option>

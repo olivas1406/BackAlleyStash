@@ -37,25 +37,29 @@ class Expenses extends Component {
 
   state = {
     transaction: [],
-    amount: []
+    amount: [],
+    balance: []
   };
 
   // When this component mounts, should grab all transactions
   componentDidMount() {
     // console.log("component mounted");
-    API.getTransactions()
-      .then(res => {
-        this.setState({
-          transaction: res.data
-        });
-        res.data.forEach(result => {
-          let joined = this.state.amount.concat(result.amount);
-          this.setState({ amount: joined });
-          // console.log(result.amount);
-        });
+    API.getTransactions().then(res => {
+      this.setState({
+        transaction: res.data
+      });
+      res.data.forEach(result => {
+        let amount = this.state.amount.concat(result.amount);
+        this.setState({ amount: amount });
+        // console.log(result.amount);
+      });
+      res.data.forEach(result => {
+        let balance = this.state.balance.concat(result.balance);
+        this.setState({ balance: balance });
+        console.log(result.balance);
         console.log(this.state);
-      })
-      .catch(err => console.log(err));
+      });
+    });
   }
 
   render() {
@@ -75,7 +79,7 @@ class Expenses extends Component {
             <tr className="AmSpecialTable">
               <th className="stockLink">Description</th>
               <th className="stockLink">Category</th>
-              <th className="stockLink">Amount</th>
+              <th className="stockLink">Spent</th>
               <th className="stockLink">Balance</th>
             </tr>
             {/* Loop through data from this.state.transaction
@@ -84,8 +88,9 @@ class Expenses extends Component {
               <tr>
                 <td>{data.transactionDesc}</td>
                 <td>{data.categoryDesc}</td>
-                <td className="amount">
-                  ${data.amount}
+                <td className="amount">${data.amount}</td>
+                <td>
+                  ${data.balance}
                   <button
                     className="btn btn-success EditButton"
                     onClick={this.createNotification("warning")}
@@ -99,7 +104,6 @@ class Expenses extends Component {
                     Edit &nbsp;
                   </button>
                 </td>
-                <td />
               </tr>
             ))}
             {/* <button className="addTrans">Add Transaction</button> */}
@@ -108,12 +112,21 @@ class Expenses extends Component {
               <td />
               {/* Use this code to add all the amount */}
               <td>
-                {this.state.amount.reduce(
+                ${this.state.amount.reduce(
                   (accumulator, currentValue) => accumulator + currentValue,
                   0
                 )}
               </td>
-              <td />
+              <td>
+                ${this.state.balance.reduce(
+                  (accumulator, currentValue) => accumulator + currentValue,
+                  0
+                ) -
+                  this.state.amount.reduce(
+                    (accumulator, currentValue) => accumulator + currentValue,
+                    0
+                  )}
+              </td>
             </tr>
           </tbody>
         </table>

@@ -25,13 +25,13 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: "categoryId",
       target: "categoryDesc"
     });
-    Transaction.belongsTo(models.Account, {
-      foreignKey: "transactionId",
-      target: "amount",
-      target: "balance",
-      target: "categoryDesc",
-      target: "transactionDesc"
-    });
+    // Transaction.belongsTo(models.Account, {
+    //   foreignKey: "transactionId",
+    //   target: "amount",
+    //   target: "balance",
+    //   target: "categoryDesc",
+    //   target: "transactionDesc"
+    // });
     Transaction.belongsTo(models.User, { foreignKey: "userID" });
     Transaction.belongsTo(models.AccountType, { foreignKey: "accountTypeId" });
   };
