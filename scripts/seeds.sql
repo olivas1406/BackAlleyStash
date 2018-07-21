@@ -36,18 +36,18 @@ VALUES
     ('Emergency Expense', NOW(), NOW());
 -- ('Uncategorized Payments', NOW(), NOW());  'Uncategorized' categorizes it. - DLO
 
-INSERT INTO account
-    (UserID, accountTypeDesc, transactionDesc, CategoryDesc, Amount, Balance, CreatedAT, UpdatedAt,
-    accountTypeID)
-VALUES
-    (2, 'Checking', 'Mortgage Payment', 'Home', 1200, 160000, NOW(), NOW(), 1),
-    (2, 'Checking', 'Salt River Project', 'Utilities', 350, 0, NOW(), NOW(), 1),
-    (2, 'Checking', 'City of Phoenix', 'Utilities', 80, 0, NOW(), NOW(), 1),
-    (1, 'Checking', 'Wells Fargo AutoLoan', 'Credit Card/Loan Payments', 300, 10000, NOW(), NOW(), 1),
-    (2, 'Checking', 'Verizon Wireless', 'Utilities', 220, 0, NOW(), NOW(), 1),
-    (2, 'Checking', 'Cox Communication', 'Utilities', 120, 0, NOW(), NOW(), 1),
-    (2, 'Checking', 'Breakfast w/ Bon @ IHOP', 'Food/Drink', 25, 0, NOW(), NOW(), 1),
-    (1, 'Checking', 'Emergency Room (Food Poisoning)', 'Emergency Expense', 400, 0, NOW(), NOW(), 1);
+-- INSERT INTO account
+--     (UserID, accountTypeDesc, transactionDesc, CategoryDesc, Amount, Balance, CreatedAT, UpdatedAt,
+--     accountTypeID)
+-- VALUES
+--     (2, 'Checking', 'Mortgage Payment', 'Home', 1200, 160000, NOW(), NOW(), 1),
+--     (2, 'Checking', 'Salt River Project', 'Utilities', 350, 0, NOW(), NOW(), 1),
+--     (2, 'Checking', 'City of Phoenix', 'Utilities', 80, 0, NOW(), NOW(), 1),
+--     (1, 'Checking', 'Wells Fargo AutoLoan', 'Credit Card/Loan Payments', 300, 10000, NOW(), NOW(), 1),
+--     (2, 'Checking', 'Verizon Wireless', 'Utilities', 220, 0, NOW(), NOW(), 1),
+--     (2, 'Checking', 'Cox Communication', 'Utilities', 120, 0, NOW(), NOW(), 1),
+--     (2, 'Checking', 'Breakfast w/ Bon @ IHOP', 'Food/Drink', 25, 0, NOW(), NOW(), 1),
+--     (1, 'Checking', 'Emergency Room (Food Poisoning)', 'Emergency Expense', 400, 0, NOW(), NOW(), 1);
     -- (2, 'Checking', 'Rx', 'Health', 12, 0, NOW(), NOW(), 1),
     -- (1, 'Checking', 'Underwear', 'Emergency Expense', 10, 0, NOW(), NOW(), 1);
 
