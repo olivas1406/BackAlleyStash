@@ -56,8 +56,8 @@ class Expenses extends Component {
       res.data.forEach(result => {
         let balance = this.state.balance.concat(result.balance);
         this.setState({ balance: balance });
-        console.log(result.balance);
-        console.log(this.state);
+        // console.log(result.balance);
+        // console.log(this.state);
       });
     });
   }
@@ -80,7 +80,7 @@ class Expenses extends Component {
               <th className="stockLink">Description</th>
               <th className="stockLink">Category</th>
               <th className="stockLink">Spent</th>
-              <th className="stockLink">Balance</th>
+              <th className="stockLink">Earned</th>
             </tr>
             {/* Loop through data from this.state.transaction
             make a new td for each data */}
@@ -117,6 +117,17 @@ class Expenses extends Component {
                   0
                 )}
               </td>
+              <td>
+                ${this.state.balance.reduce(
+                  (accumulator, currentValue) => accumulator + currentValue,
+                  0
+                )}
+              </td>
+            </tr>
+            <tr>
+              <td>Your Stash</td>
+              <td />
+              <td />
               <td>
                 ${this.state.balance.reduce(
                   (accumulator, currentValue) => accumulator + currentValue,
