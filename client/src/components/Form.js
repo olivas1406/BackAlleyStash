@@ -54,11 +54,12 @@ class Form extends Component {
         >
           <option>Required</option>
           <option>Miscellaneous</option>
-          <option>Mortgage</option>
+          <option>Mortgage/Rent</option>
           <option>Utilities</option>
           <option>Transportation</option>
           <option>Personal</option>
-          <option>Credit Card</option>
+          <option>Credit Card/Loan</option>
+          <option>Income</option>
         </select>
         Money Spent:{" "}
         <input
@@ -87,7 +88,6 @@ class Form extends Component {
         <hr />
         <br />
       </form>
-
     );
   }
 }
