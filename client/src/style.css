@@ -83,12 +83,13 @@ table {
     margin: 0 auto 2% auto;
     width: 95%;
     border-collapse: collapse;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 td, th {
     border: 1px solid #dddddd;
     text-align: left;
-    padding: 8px;
+    padding: 6px;
 }
 
 tr:nth-child(even) {
@@ -118,17 +119,37 @@ tr:nth-child(even) {
 }
 
 .EditButton {
-    float: right;
+    /* clear: both;
+    float: right; */
+    text-align: center;
     font-size: 14px;
     color: red;
     cursor: pointer;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    width: 90%;
+margin-left: 5%;
+margin-right: 5%;
 }
 
 .DeleteButton {
-    float: right;
+    /* clear: both;
+    float: right; */
+    width: 90%;
+margin-left: 5%;
+margin-right: 5%;
+    text-align: center;
+    margin-top: 1%;
     font-size: 14px;
     cursor: pointer;
-    margin-right: 2%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+button {
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+}
+
+.tableButtons {
+    width: 6%;
 }
 
 .ExpenseText {
@@ -280,12 +301,19 @@ tr:nth-child(even) {
     padding: 1%;
 }
 
+.SavingsChart {
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
+    width: 90%;
+    margin: 0 auto 0 auto;
+}
+
 .Scraper {
     clear: both;
     width: 90%;
     text-align: center;
     border: solid 1px #330036;
     margin: 2% auto 4% auto;
+    padding-bottom: 1.5%;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     background-color: rgba(212, 226, 255, 0.329);
 }
@@ -324,6 +352,11 @@ a {
     padding: 1%;
 }
 
+.StocksTable {
+    margin: 0 auto 0 auto;
+    padding: 0;
+}
+
 .stockLink {
     text-align: center;
 }
@@ -335,16 +368,53 @@ a {
 
 .formJS {
     margin: 2%;
-    
+    text-align: center;
+}
+
+.formJS1 {
+    margin: 1% 2% 1% 2%; 
+}
+
+.formJS2 {
+    margin: 0 2% 0 2%;
+
+}
+
+.formJS3 {
+    margin: 0 2% 0 2%;
+    color: red;
+}
+
+.formJS4 {
+    margin: 0 2% 0 2%;
 }
 
 .ExpenseForm {
-    /* text-align: center; */
-    /* display: block; */
-    /* width: 80%; */
-  /* margin-left: auto; */
-  
-  /* background-color: purple; */
-    
+    margin: 2%;
+    padding: 1%;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
+
+.transSubmit {
+    cursor: pointer;
+}
+
+.formHeader {
+    font-family: arial, sans-serif;
+    background-color: #dddddd;
+    border-radius: 5px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    padding: 1%;
+    width: 15%;
+    color: black;    
+}
+
+/* .tableSpacer {
+    background-color: purple;
+} */
+
+
+
+
 
