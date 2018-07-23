@@ -5,7 +5,6 @@ import {
   NotificationManager,
   NotificationContainer
 } from "react-notifications";
-import Form from "./Form.js";
 import { timingSafeEqual } from "crypto";
 
 class Expenses extends Component {
@@ -37,29 +36,72 @@ class Expenses extends Component {
 
   state = {
     transaction: [],
-    amount: [],
-    balance: []
+    totalamount: [],
+    totalbalance: [],
+    transactionDesc: "",
+    categoryDesc: "",
+    amount: "",
+    balance: ""
   };
 
-  // When this component mounts, should grab all transactions
-  componentDidMount() {
-    // console.log("component mounted");
+  handleInput = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleSubmit = event => {
+    event.preventDefault();
+    if (
+      (this.state.description && this.state.category && this.state.amount,
+      this.state.balance)
+    ) {
+      API.saveTransaction({
+        transactionDesc: this.state.transactionDesc,
+        categoryDesc: this.state.categoryDesc,
+        amount: this.state.amount,
+        balance: this.state.balance
+      })
+        .then(res => this.loadTransaction())
+        .then(() =>
+          // this.setState({
+          //   transactionDesc: "",
+          //   categoryDesc: "",
+          //   amount: "",
+          //   balance: ""
+          // })
+          console.log(this.state)
+        );
+    }
+  };
+
+  loadTransaction = () => {
     API.getTransactions().then(res => {
       this.setState({
-        transaction: res.data
+        transaction: res.data,
+        transactionDesc: "",
+        categoryDesc: "",
+        amount: "",
+        balance: ""
       });
       res.data.forEach(result => {
-        let amount = this.state.amount.concat(result.amount);
-        this.setState({ amount: amount });
+        let amount = this.state.totalamount.concat(result.amount);
+        this.setState({ totalamount: amount });
         // console.log(result.amount);
       });
       res.data.forEach(result => {
-        let balance = this.state.balance.concat(result.balance);
-        this.setState({ balance: balance });
+        let balance = this.state.totalbalance.concat(result.balance);
+        this.setState({ totalbalance: balance });
         // console.log(result.balance);
         // console.log(this.state);
       });
     });
+  };
+  // When this component mounts, should grab all transactions
+  componentDidMount() {
+    // console.log("component mounted");
+    this.loadTransaction();
   }
 
   render() {
@@ -90,9 +132,7 @@ class Expenses extends Component {
                 <td>{data.transactionDesc}</td>
                 <td>{data.categoryDesc}</td>
                 <td className="amount">${data.amount}</td>
-                <td>
-                  ${data.balance}
-                </td>
+                <td>${data.balance}</td>
                 <td className="tableButtons">
                   <button
                     className="btn btn-success EditButton"
@@ -111,47 +151,105 @@ class Expenses extends Component {
             ))}
             {/* <button className="addTrans">Add Transaction</button> */}
             {/* <tr> */}
-              {/* <td className="expenseTotal">Total</td> */}
-              {/* <td /> */}
-              {/* Use this code to add all the amount */}
-              {/* <td> */}
-                {/* ${this.state.amount.reduce( */}
-                  {/* (accumulator, currentValue) => accumulator + currentValue, */}
-                  {/* 0 */}
-                {/* )} */}
-              {/* </td> */}
-              {/* <td> */}
-                {/* ${this.state.balance.reduce( */}
-                  {/* (accumulator, currentValue) => accumulator + currentValue, */}
-                  {/* 0 */}
-                {/* )} */}
-              {/* </td> */}
+            {/* <td className="expenseTotal">Total</td> */}
+            {/* <td /> */}
+            {/* Use this code to add all the amount */}
+            {/* <td> */}
+            {/* ${this.state.amount.reduce( */}
+            {/* (accumulator, currentValue) => accumulator + currentValue, */}
+            {/* 0 */}
+            {/* )} */}
+            {/* </td> */}
+            {/* <td> */}
+            {/* ${this.state.balance.reduce( */}
+            {/* (accumulator, currentValue) => accumulator + currentValue, */}
+            {/* 0 */}
+            {/* )} */}
+            {/* </td> */}
             {/* </tr> */}
 
             <td colSpan="5" className="tableSpacer" />
             <tr>
               {/* <td>Your Stash</td> */}
-              
+
               <td colSpan="4">Total</td>
               {/* <td />
               <td /> */}
               <td>
-                ${this.state.balance.reduce(
+                ${this.state.totalbalance.reduce(
                   (accumulator, currentValue) => accumulator + currentValue,
                   0
                 ) -
-                  this.state.amount.reduce(
+                  this.state.totalamount.reduce(
                     (accumulator, currentValue) => accumulator + currentValue,
                     0
                   )}
               </td>
             </tr>
-            <tr>
-              {/* <Form />{" "} */}
-            </tr>
+            <tr>{/* <Form />{" "} */}</tr>
           </tbody>
         </table>
-        <Form />{" "}
+        <form id="form1" className="ExpenseForm">
+          <h5 className="formHeader">Add New Transaction</h5>
+          Description:{" "}
+          <input
+            value={this.state.transactionDesc}
+            onChange={this.handleInput}
+            name="transactionDesc"
+            placeholder="Required"
+            className="formJS1"
+            required
+            size="75"
+          />
+          Category:{" "}
+          <select
+            value={this.state.categoryDesc}
+            onChange={this.handleInput}
+            name="categoryDesc"
+            placeholder="Required"
+            className="formJS2"
+            required
+          >
+            {/* <option>Required</option> */}
+            <option value="" disabled selected>
+              Required
+            </option>
+            <option>Miscellaneous</option>
+            <option>Mortgage/Rent</option>
+            <option>Utilities</option>
+            <option>Transportation</option>
+            <option>Personal</option>
+            <option>Credit Card/Loan</option>
+            <option>Income</option>
+          </select>
+          <br />
+          Expense:{" "}
+          <input
+            value={this.state.amount}
+            onChange={this.handleInput}
+            name="amount"
+            placeholder="Required"
+            className="formJS3"
+            required
+          />
+          or Income:{" "}
+          <input
+            value={this.state.balance}
+            onChange={this.handleInput}
+            name="balance"
+            placeholder="Required"
+          />
+          <button
+            className="transSubmit formJS4"
+            type="Submit"
+            form="form1"
+            value="Submit"
+            onClick={this.handleSubmit}
+          >
+            Add Transaction
+          </button>
+          <br />
+        </form>
       </div>
     );
   }
