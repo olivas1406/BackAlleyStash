@@ -22,7 +22,10 @@ Back Alley Stash
 
 This Project was developed and is maintained by the Brogrammers Team, to get help contact:<br>
 
-- Daniel Olivas (github: olivas1406)
-- Bon Erick Silvallana (github: bsilvall)
-- Andrew Nowlin (github: AndewNowlin)
+- Daniel Olivas (github: olivas1406)<br>
+    me@danielolivas.net<br> [http://www.danielolivas.net](danielolivas.net)<br><br>
+- Bon Erick Silvallana (github: bsilvall)<br>
+    erick_malas95@hotmail.com<br><br>
+- Andrew Nowlin (github: AndewNowlin)<br>
+    flysparky@cox.net<br>[https://www.linkedin.com/in/andrew-nowlin/](https://www.linkedin.com/in/andrew-nowlin/)<br><br>
 - Dan Shook (github: danshook)
