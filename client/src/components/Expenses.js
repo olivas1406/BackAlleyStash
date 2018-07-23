@@ -73,14 +73,15 @@ class Expenses extends Component {
         <br />
         <table className="Transactions">
           <tbody>
-            <tr>
+            {/* <tr>
               <Form />{" "}
-            </tr>
+            </tr> */}
             <tr className="AmSpecialTable">
               <th className="stockLink">Description</th>
               <th className="stockLink">Category</th>
               <th className="stockLink">Spent</th>
               <th className="stockLink">Earned</th>
+              <th className="stockLink">Edit</th>
             </tr>
             {/* Loop through data from this.state.transaction
             make a new td for each data */}
@@ -91,6 +92,8 @@ class Expenses extends Component {
                 <td className="amount">${data.amount}</td>
                 <td>
                   ${data.balance}
+                </td>
+                <td className="tableButtons">
                   <button
                     className="btn btn-success EditButton"
                     onClick={this.createNotification("warning")}
@@ -107,27 +110,31 @@ class Expenses extends Component {
               </tr>
             ))}
             {/* <button className="addTrans">Add Transaction</button> */}
-            <tr>
-              <td className="expenseTotal">Total</td>
-              <td />
+            {/* <tr> */}
+              {/* <td className="expenseTotal">Total</td> */}
+              {/* <td /> */}
               {/* Use this code to add all the amount */}
-              <td>
-                ${this.state.amount.reduce(
-                  (accumulator, currentValue) => accumulator + currentValue,
-                  0
-                )}
-              </td>
-              <td>
-                ${this.state.balance.reduce(
-                  (accumulator, currentValue) => accumulator + currentValue,
-                  0
-                )}
-              </td>
-            </tr>
+              {/* <td> */}
+                {/* ${this.state.amount.reduce( */}
+                  {/* (accumulator, currentValue) => accumulator + currentValue, */}
+                  {/* 0 */}
+                {/* )} */}
+              {/* </td> */}
+              {/* <td> */}
+                {/* ${this.state.balance.reduce( */}
+                  {/* (accumulator, currentValue) => accumulator + currentValue, */}
+                  {/* 0 */}
+                {/* )} */}
+              {/* </td> */}
+            {/* </tr> */}
+
+            <td colSpan="5" className="tableSpacer" />
             <tr>
-              <td>Your Stash</td>
-              <td />
-              <td />
+              {/* <td>Your Stash</td> */}
+              
+              <td colSpan="4">Total</td>
+              {/* <td />
+              <td /> */}
               <td>
                 ${this.state.balance.reduce(
                   (accumulator, currentValue) => accumulator + currentValue,
@@ -139,8 +146,12 @@ class Expenses extends Component {
                   )}
               </td>
             </tr>
+            <tr>
+              {/* <Form />{" "} */}
+            </tr>
           </tbody>
         </table>
+        <Form />{" "}
       </div>
     );
   }
