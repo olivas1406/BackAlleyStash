@@ -25,7 +25,6 @@ body {
     width: 40%;
     margin: 4% auto 4% auto;
     padding: 2%;
-
 }
 
 .signInTitle {
@@ -119,24 +118,20 @@ tr:nth-child(even) {
 }
 
 .EditButton {
-    /* clear: both;
-    float: right; */
     text-align: center;
     font-size: 14px;
     color: red;
     cursor: pointer;
     box-shadow: 0 3px 6px #999, 0 3px 6px #999;
     width: 90%;
-margin-left: 5%;
-margin-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .DeleteButton {
-    /* clear: both;
-    float: right; */
     width: 90%;
-margin-left: 5%;
-margin-right: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
     text-align: center;
     margin-top: 1%;
     font-size: 14px;
@@ -191,7 +186,6 @@ button {
     font-size: 20px;
     position: fixed;
     margin-left: 60%;
-    /* margin-top: -5%; */
     border-radius: 6px;
     z-index: 25;
 }
@@ -233,7 +227,6 @@ button {
 }
 
 .message {
-    /* color: red; */
     padding: 4%;
     text-align: center;
 }
@@ -242,6 +235,7 @@ button {
     clear: both;
     text-align: center;
     background: url("./bg.png");
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .jumboText {
@@ -254,6 +248,7 @@ button {
     font-weight: bold;
     margin: 0 auto 0 auto;
     border-radius: 4px;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .jumboSmall {
@@ -268,6 +263,7 @@ button {
     border-radius: 4px;
     width: 28%;
     font-family: 'Playfair Display', serif;
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
 
 .Navbar {
@@ -408,11 +404,8 @@ a {
     padding: 1%;
     width: 15%;
     color: black;    
+    box-shadow: 0 3px 6px #999, 0 3px 6px #999;
 }
-
-/* .tableSpacer {
-    background-color: purple;
-} */
 
 
 
