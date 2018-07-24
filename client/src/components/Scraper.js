@@ -32,7 +32,7 @@ class Scraper extends Component {
     return (
       <div>
         <div className="Scraper">
-          <h2 className="ExpenseText">Financial Headlines</h2>
+          <h2 className="ExpenseText">Business Headlines</h2>
           <hr />
           <br />
           <table className="StocksTable">
