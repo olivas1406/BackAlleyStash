@@ -1,11 +1,11 @@
 {
   "development": {
     "username": "root",
-    "password": "tiMh9AwUOkKzsfX1wVBs",
+    "password": "",
     "database": "stash",
     "host": "127.0.0.1",
     "dialect": "mysql"
-  },
+  }
   "test": {
     "username": "root",
     "password": null,
